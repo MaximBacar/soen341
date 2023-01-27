@@ -1,10 +1,10 @@
 # Members
 
-Maxim Bacar
+-Maxim Bacar (maximbacar@hotmail.ca)
 
-Asmae Loulidi
+- Asmae Loulidi (loulidiasmae@gmail.com)
 
-Gagan Bhogal
+- Gagan Bhogal (gaganbhogal@outlook.com)
 
 Muiz Madadi
 
@@ -13,3 +13,11 @@ Muiz Madadi
 
 
 # Goals
+
+# Technologies
+
+- React
+- MySQL
+- Python
+- JavaScript
+- HTML/CSS
