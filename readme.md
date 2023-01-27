@@ -1,20 +1,21 @@
-# Members
+# SOEN-341
+## Members
 
--Maxim Bacar (maximbacar@hotmail.ca)
+- Maxim Bacar (maximbacar@hotmail.ca)
 
 - Asmae Loulidi (loulidiasmae@gmail.com)
 
 - Gagan Bhogal (gaganbhogal@outlook.com)
 
-Muiz Madadi
+- Muiz Madadi
 
 
-# Features
+## Features
 
 
-# Goals
+## Goals
 
-# Technologies
+## Technologies
 
 - React
 - MySQL
