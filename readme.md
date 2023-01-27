@@ -17,8 +17,8 @@
 
 ## Technologies
 
-- React
-- MySQL
-- Python
-- JavaScript
-- HTML/CSS
+- React (Front-end)
+- MySQL (Database)
+- Python (Back-end)
+- JavaScript (Front-end)
+- HTML/CSS (Front-end)
