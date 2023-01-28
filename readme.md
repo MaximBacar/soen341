@@ -7,7 +7,7 @@
 
 - Gagan Bhogal (gaganbhogal@outlook.com)
 
-- Muiz Madadi
+- Muiz Madadi (muiz.madadi@gmail.com)
 
 
 ## Features
