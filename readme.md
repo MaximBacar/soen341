@@ -16,7 +16,17 @@ Our team will be developing a career services platform where students will be ab
 
 ## Roles
 
-## Task Breakdown
+- Asmae: React (Front-end)
+         Javascript (Front-end)
+         HTML/CSS (Front-end)
+
+- Muiz: React (Front-end)
+        Javascript (Front-end)
+        HTML/CSS (Front-end)
+
+- Maxim: MySQL (Database)
+
+- Gagan: Python (Back-end)
 
 ## Features
 
@@ -37,8 +47,6 @@ Student/Candidate:
 
 Admin:
 - Managing all user profiles and postings
-
-## Issues (things to do for next sprint)
 
 ## Goals
 
