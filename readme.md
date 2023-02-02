@@ -10,7 +10,7 @@ Our team will be developing a career services platform where students will be ab
 
 - Asmae Loulidi (loulidiasmae@gmail.com)
 
-- Gagan Bhogal (gaganbhogal@outlook.com)
+- Gagan Bhogal (gaganbhogal@outlook.com) Github: gigisbb
 
 - Muiz Madadi (muiz.madadi@gmail.com) Github: mzmaddi
 
