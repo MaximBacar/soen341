@@ -12,7 +12,7 @@ Our team will be developing a career services platform where students will be ab
 
 - Gagan Bhogal (gaganbhogal@outlook.com)
 
-- Muiz Madadi (muiz.madadi@gmail.com)
+- Muiz Madadi (muiz.madadi@gmail.com) Github: mzmaddi
 
 ## Roles
 
