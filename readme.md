@@ -48,7 +48,7 @@ Student/Candidate:
 Admin:
 - Managing all user profiles and postings
 
-## Goals
+## Objectives
 
 ## Technologies
 
