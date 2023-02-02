@@ -51,6 +51,8 @@ Admin:
 
 ## Objectives
 
+Create a webapp where employers can create their company profile, showcasing their brand and company as well as current job openings. Employers can create and manage job postings, specify required skills, experience, and qualifications. They can search for candidates based on various criteria such as skills, experience, location, education, etc. Candidates can create their profile and upload their resumes to the app, and employers can search and view them. Selected candidates can interact through messages with employers through the app to schedule interviews or ask follow-up questions.
+
 ## Technologies
 
 - React (Front-end)
