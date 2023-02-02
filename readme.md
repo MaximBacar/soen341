@@ -25,7 +25,8 @@ Our team will be developing a career services platform where students will be ab
         HTML/CSS (Front-end)
 
 - Maxim: MySQL (Database)
-
+         Python (Back-end)
+         
 - Gagan: Python (Back-end)
 
 ## Features
