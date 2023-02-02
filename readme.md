@@ -6,7 +6,7 @@ Our team will be developing a career services platform where students will be ab
 
 ## Members
 
-- Maxim Bacar (maximbacar@hotmail.ca)
+- Maxim Bacar (maximbacar@hotmail.ca) Github: MaximBacar
 
 - Asmae Loulidi (loulidiasmae@gmail.com)
 
