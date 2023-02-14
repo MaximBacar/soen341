@@ -1,1 +1,60 @@
 
+.navbar#navbar{
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    width: 200px;
+    height: 450px;
+    position: relative;
+}
+.title {
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    position: relative;
+    left: 10px;
+    top: 10px; 
+    width: 170px; 
+    height: 50px;
+    text-align:center; 
+}
+.smallbox {
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    position: relative;
+    left: 10px; 
+    width: 170px; 
+    height: 50px; 
+    text-align: center;
+}
+#box1{
+    top: 70px;
+}
+#box2 {
+    top: 130px; 
+}
+#box3 {
+    top: 190px; 
+}
+.mario {
+    border-color: white; 
+    background: none;
+    height: 35px; 
+    width: 35px;
+
+}
+button#mario {
+    border: none; 
+    background: none; 
+}
+.mario:hover {
+    height: 40px;
+    width: 40px;
+}
+#buttonExit {
+    position: absolute; 
+    bottom: 0px; 
+    left: 38%; 
+
+}
