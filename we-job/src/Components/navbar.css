@@ -1,0 +1,101 @@
+.navbar {
+    background: lightblue; 
+    height: 80px; 
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+    font-size: 1.2rem; 
+    position: sticky; 
+    top: 0;
+    z-index: 999; 
+}
+.navbar_container {
+    display: flex; 
+    justify-content: space-between;   
+    height: 80px; 
+    z-index: 1; 
+    width: 100%; 
+    max-width: 1300px; 
+    margin: 0 auto; 
+    padding: 0 50px; 
+}
+#navbar_logo {
+    background-color: white;
+    background-image: linear-gradient(to top, grey 0%, brown 100%); 
+    background-size: 100%; 
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+    display: flex;
+    align-items: center; 
+    cursor: pointer; 
+    text-decoration: none;
+    font-size: 2rem;
+}
+.fe-gem {
+    margin-right: 0.5rem; 
+}
+.navbar_menu {
+    display: flex; 
+    align-items: center;
+    list-style: none; 
+    text-align: center;
+}
+.navbar_item {
+    width: 100px; 
+    align-items: center; 
+}
+.navbar_links{
+    
+    color: black;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    text-decoration: none;
+    padding: 0 1rem; 
+}
+.navbar_btn{
+    width: 100px;
+    height: 40px; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    
+}
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    text-decoration: none; 
+    padding: 0px;
+    height: 100%; 
+    width: 100px; 
+    border: none;
+    outline: none; 
+    border-radius: 4px; 
+    background: #f36612;
+    color: black;
+}
+.button:hover {
+    background: black; 
+    color: white;
+    transition: all 0.3s ease; 
+}
+
+@media screen and(max-width: 960px) {
+    .navbar_container {
+        display: flex;
+        justify-content: space-between; 
+        height: 80px; 
+        z-index: 1px; 
+        width: 100%;
+        max-width: 1300px;
+        padding: 0px;
+}
+.navbar_menu {
+    display: grid; 
+    grid-template-columns: auto;
+    margin
+}
+}
