@@ -32,6 +32,7 @@
 
 #services {
   color: #28104e;
+  flex-direction: column;
   display: flex;
   padding: 60px;
 }
