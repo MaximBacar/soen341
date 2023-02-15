@@ -16,11 +16,6 @@ function Navbar() {
             <span class="box"></span>
           </div>
           <ul class="navbar_menu">
-          <li class="navbar_item">
-            <div class="search_bar">
-              <input type="text" placeholder="Search..." /> 
-              </div>
-            </li>
             <li class="navbar_item">
               <a href="/" class="navbar_links">Home</a>
             </li>
@@ -29,8 +24,15 @@ function Navbar() {
             </li>
             <li class="navbar_item">
               <a href="/" class="navbar_links">Messages</a>
+
+            </li>
+            <li class="navbar_item">
+            <div class="search_bar">
+              <input type="text" placeholder="Search..." /> 
+              </div>
             </li>
             <li class="navbar_btn"><a href="/" class="button">Sign Up</a></li>
+            
 
           </ul>
 

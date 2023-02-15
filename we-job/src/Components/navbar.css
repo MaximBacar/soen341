@@ -1,25 +1,29 @@
 .navbar {
+    border: solid black;
     background: lightblue; 
     height: 80px; 
     display: flex; 
-    justify-content: center;
-    align-items: center; 
+    
+
+    align-items:center; 
     font-size: 1.2rem; 
     position: sticky; 
-    top: 0;
+    top:0;
     z-index: 999; 
 }
 .navbar_container {
+    border: solid black;
     display: flex; 
-    justify-content: space-between;   
+    justify-content: center;
     height: 80px; 
     z-index: 1; 
     width: 100%; 
-    max-width: 1300px; 
-    margin: 0 auto; 
-    padding: 0 50px; 
+    max-width: 150px; 
+    margin: 1 auto; 
+    padding: 0 10px; 
 }
 #navbar_logo {
+    border: solid black;
     background-color: white;
     background-image: linear-gradient(to top, grey 0%, brown 100%); 
     background-size: 100%; 
@@ -37,8 +41,9 @@
     margin-right: 0.5rem; 
 }
 .navbar_menu {
+    border: solid black;
     display: flex; 
-    align-items: center;
+    align-items:center; 
     list-style: none; 
     text-align: center;
 }
@@ -84,5 +89,5 @@
     transition: all 0.3s ease; 
 }
 input[type=text] {
-    float: right; 
+    float: left; 
 }
