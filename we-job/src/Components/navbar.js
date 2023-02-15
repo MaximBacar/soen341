@@ -32,7 +32,11 @@ function Navbar() {
                 <input type="text" placeholder="Search..." /> 
               </li>
             </div>
-            <li class="navbar_btn"><a href="/" class="button">Sign Up</a></li>
+            <div class="signup-login">
+              <li class="navbar_btn"><a href="/" class="button">Log in</a></li>
+              <li class="navbar_btn"><a href="/" class="button">Sign Up</a></li>
+            </div>
+            
             
 
           </ul>
