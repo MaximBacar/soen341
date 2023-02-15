@@ -7,7 +7,8 @@ function Homepage() {
     return(
         <div>
             <Navbar/>
-            <Footer />
+           
+        
             
         </div>
 
