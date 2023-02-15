@@ -1,17 +1,12 @@
-import Navbar from './navbar'
-import Footer from './footer'
-
-
+import Navbar from "./navbar";
+import Footer from "./footer";
 
 function Homepage() {
-    return(
-        <div>
-            <Navbar/>
-           
-        
-            
-        </div>
-
-    );
+  return (
+    <div>
+      <Navbar />
+      <Footer />
+    </div>
+  );
 }
-export default Homepage; 
+export default Homepage;

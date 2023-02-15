@@ -1,13 +1,26 @@
+import React from "react";
+import "./footer.css";
 
 function Footer() {
-    return(
-        <div id="footer">
-            <div class="footer-links" id="back-to-top"> back to top of page </div>
-            <div class="footer-links" id="link1"> link 1 </div>
-            <div class="footer-links" id="link2"> link 2 </div>
-            <div class="footer-links" id="link3"> link 3 </div>
-            
+  return (
+    <div id="footer">
+      <h1 id="title">Find the perfect opportunity for you!</h1>
+      <div id="container">
+        <div id="about">
+          <h1>About Us</h1>
+          <p>hello</p>
         </div>
-    );
+        <div id="services">
+          <h1>Services</h1>
+        </div>
+        <div id="contact">
+          <h1>Contact Us</h1>
+        </div>
+        <div id="social">
+          <h1>Social Media</h1>
+        </div>
+      </div>
+    </div>
+  );
 }
-export default Footer; 
+export default Footer;
