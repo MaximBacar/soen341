@@ -56,11 +56,12 @@
     padding: 0 1rem; 
 }
 .navbar_btn{
-    width: 100px;
+    width: 150px;
     height: 40px; 
     display: flex;
     justify-content: center; 
     align-items: center;
+    padding-right: 2rem; 
     
 }
 .button{
@@ -82,20 +83,6 @@
     color: white;
     transition: all 0.3s ease; 
 }
-
-@media screen and(max-width: 960px) {
-    .navbar_container {
-        display: flex;
-        justify-content: space-between; 
-        height: 80px; 
-        z-index: 1px; 
-        width: 100%;
-        max-width: 1300px;
-        padding: 0px;
-}
-.navbar_menu {
-    display: grid; 
-    grid-template-columns: auto;
-    margin
-}
+input[type=text] {
+    float: right; 
 }

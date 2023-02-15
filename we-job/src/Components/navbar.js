@@ -9,13 +9,18 @@ function Navbar() {
     return(
         <nav class="navbar">
           <div class="navbar_container">
-            <a href="/" id="navbar_logo">HELLO</a>
+            <a href="/" id="navbar_logo">We-Job</a>
             <div class="navbar_toggle" id="menu"></div>
             <span class="box"></span>
             <span class="box"></span>
             <span class="box"></span>
           </div>
           <ul class="navbar_menu">
+          <li class="navbar_item">
+            <div class="search_bar">
+              <input type="text" placeholder="Search..." /> 
+              </div>
+            </li>
             <li class="navbar_item">
               <a href="/" class="navbar_links">Home</a>
             </li>
