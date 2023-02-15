@@ -16,21 +16,22 @@ function Navbar() {
             <span class="box"></span>
           </div>
           <ul class="navbar_menu">
-            <li class="navbar_item">
-              <a href="/" class="navbar_links">Home</a>
-            </li>
-            <li class="navbar_item">
-              <a href="/" class="navbar_links">Log in</a>
-            </li>
-            <li class="navbar_item">
-              <a href="/" class="navbar_links">Messages</a>
-
-            </li>
-            <li class="navbar_item">
-            <div class="search_bar">
-              <input type="text" placeholder="Search..." /> 
-              </div>
-            </li>
+            <div class="links">
+              <li class="navbar_item">
+                <a href="/" class="navbar_links">Profile</a>
+              </li>
+              <li class="navbar_item">
+                <a href="/" class="navbar_links">Job Offer</a>
+              </li>
+              <li class="navbar_item">
+                <a href="/" class="navbar_links">Messages</a>
+              </li>
+            </div>
+            <div class="search-bar">
+              <li class="navbar_item" id="searchbar">
+                <input type="text" placeholder="Search..." /> 
+              </li>
+            </div>
             <li class="navbar_btn"><a href="/" class="button">Sign Up</a></li>
             
 
