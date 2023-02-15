@@ -1,6 +1,6 @@
 .navbar {
     border: solid black;
-    background: lightblue; 
+    background-color: white; 
     height: 80px; 
     display: flex; 
 
@@ -12,7 +12,7 @@
     z-index: 999; 
 }
 .navbar_container {
-    border: solid black;
+    
     display: flex; 
     justify-content: center;
     height: 80px; 
@@ -23,9 +23,9 @@
     padding: 0 10px; 
 }
 #navbar_logo {
-    border: solid black;
-    background-color: white;
-    background-image: linear-gradient(to top, grey 0%, brown 100%); 
+ 
+    background-color: #6237A0;
+    background-image: linear-gradient(to top, white 0%, black 100%); 
     background-size: 100%; 
     -webkit-background-clip: text;
     -moz-background-clip: text;
@@ -41,7 +41,7 @@
     margin-right: 0.5rem; 
 }
 .navbar_menu {
-    border: solid black;
+    
     display: flex; 
     width:100%; 
     justify-content:start-flex;
@@ -51,7 +51,7 @@
 }
 .links {
     display: flex;
-    border: solid  black;
+  
     justify-content: space-between; 
     width: 100%; 
     max-width: 400px; 
@@ -63,7 +63,8 @@
 }
 .navbar_links{
     font-size: 1.60rem;
-    color: black;
+    color: #28104E; 
+ 
     display: flex; 
     align-items: center; 
     justify-content: center; 
@@ -71,17 +72,44 @@
     padding: 0 1rem; 
 }
 .search-bar{
-    border: solid black; 
+
     width:100%; 
-    max-width: 600px;
+    max-width: 700px;
+}
+input[type=text]{
+
+    padding: 6px; 
+    border:none; 
+    margin-top:8px;
+    margin-bottom:8px;
+    margin-left:8px;
+    width: 640px; 
+    height:2.5rem;
+    border-radius:10px;
+    background-color: #f2f2f2;
+}
+::placeholder{
+    font-size : 1.4rem; 
+   
+}
+.signup-login {
+     
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+    align-content: center;
+    width:100%;
+    max-width: 200px;
+    
+   
 }
 .navbar_btn{
-    width: 150px;
+    width: 100px;
     height: 40px; 
     display: flex;
-    justify-content: center; 
+    justify-content: flex-end; 
     align-items: center;
-    padding-right: 2rem; 
+    padding-right: 1rem; 
     
 }
 .button{
@@ -92,14 +120,16 @@
     padding: 0px;
     height: 100%; 
     width: 100px; 
-    border: none;
+ 
     outline: none; 
-    border-radius: 4px; 
-    background: #f36612;
-    color: black;
+    border-radius: 80px; 
+    
+    background: #28104E;
+    color: white;
+    
 }
 .button:hover {
-    background: black; 
+    background: #6237A0;  
     color: white;
     transition: all 0.3s ease; 
 }
