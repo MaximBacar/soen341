@@ -12,7 +12,7 @@ function Footer() {
         </div>
         <div id="services">
           <h1>Services</h1>
-          <p>test</p>
+          {/* <p>test</p> */}
         </div>
         <div id="contact">
           <h1>Contact Us</h1>
