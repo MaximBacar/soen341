@@ -21,7 +21,10 @@ function firstPage() {
       <div id="img">
         <img id="girl" src={girl} />
       </div>
-      <div id="description"></div>
+      <div id="description">
+        Connect with colleagues and potential employers to achieve the dream
+        career you deserve{" "}
+      </div>
       <Footer />
     </div>
   );
