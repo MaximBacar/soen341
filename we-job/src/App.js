@@ -1,4 +1,4 @@
-import Homepage from "./Components/homepage";
+import Homepage from "./pages/homepage";
 import "./App.css";
 import "./Components/navbar.css";
 

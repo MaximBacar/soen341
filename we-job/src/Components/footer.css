@@ -1,16 +1,17 @@
 #footer {
-  background-color: #f2f2f2;
+  background-color: white;
+  border-top: solid 2px #f2f2f2;
   position: absolute;
-  bottom: -100px;
+  top: 100%;
   width: 100%;
-  padding-bottom: 50px;
+  padding-bottom: 20px;
 }
 
 #title {
   padding-top: 50px;
-  font-size: 24px;
-  color: #28104e;
-  margin-bottom: 40px;
+  font-size: 30px;
+  color: #6237a0;
+  /* margin-bottom: 40px; */
   font-weight: bold;
   text-align: center;
 }
@@ -19,32 +20,26 @@
   display: flex;
   justify-content: center;
   text-align: center;
-  width: 100%;
-  background-color: white;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-#about {
+.footerCategories {
+  font-size: 15px;
   color: #28104e;
   flex-direction: column;
   display: flex;
   padding: 60px;
 }
 
-#services {
+a {
+  text-decoration: none;
+  padding: 10px;
   color: #28104e;
-  flex-direction: column;
-  display: flex;
-  padding: 60px;
+  font-size: 18px;
 }
 
-#contact {
-  color: #28104e;
-  display: flex;
-  padding: 60px;
-}
-
-#social {
-  color: #28104e;
-  display: flex;
-  padding: 60px;
+a:hover {
+  color: #6237a0;
+  /* font-weight: bold; */
 }
