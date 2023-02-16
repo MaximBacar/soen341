@@ -1,11 +1,12 @@
 import Homepage from "./pages/homepage";
 import "./App.css";
-import "./Components/navbar.css";
+import FirstPage from "./pages/firstPage";
 
 function App() {
   return (
     <div>
-      <Homepage />
+      {/* <Homepage /> */}
+      <FirstPage />
     </div>
   );
 }

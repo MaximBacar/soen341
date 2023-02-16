@@ -32,14 +32,14 @@
   padding: 60px;
 }
 
-a {
+.footerLink {
   text-decoration: none;
   padding: 10px;
   color: #28104e;
   font-size: 18px;
 }
 
-a:hover {
+.footerLink:hover {
   color: #6237a0;
   /* font-weight: bold; */
 }
