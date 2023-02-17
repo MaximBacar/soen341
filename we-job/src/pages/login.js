@@ -1,7 +1,9 @@
 import "./login.css"
 import React from 'react' 
 import logo from "../Components/photo/wejob-low-resolution-logo-color-on-transparent-background.png";
+import Footer from "../Components/footer"
 /** implemented log in page as isolated page without any footer */ 
+
 
 function Login() {
     return(
@@ -19,27 +21,26 @@ function Login() {
                 <div class="login_box">
                     <form action = "/login" method="POST" id="login_form">
 
-                    <h1 class="login_title">Login</h1>
-                    <p id="login_slogan">EMAIL</p>
-
-                    <div class="text-field">
+                    <h1 class="login_title">Sign in</h1>
+                    <h2 class="message">Stay updated on your professional world </h2>
+                    <div class="space-between"></div>
+                    <div class="text_field">
                         <input type="email" id="login_email" name="login_email" placeholder="Please enter email" required/> 
                         <span></span>
                     </div>
+                    <div class="space-between"></div>
                     <div class="text-field">
                         <input type="password" id="login_password" name="login_password" placeholder="Password" required/>
                         <span></span>
-                        
+                        <div class="space-between"></div>
                         <a href="./" id="forgot_password">Forgot Password?</a>
-                        <button type="submit">Login</button>
-
-
-                    
+                        <button type="submit">Sign in</button>
                     </div>
                     </form>
                 </div>
-
+                <div class="space-between2"></div>
             </div>
+            <Footer />
 
         </div>
         

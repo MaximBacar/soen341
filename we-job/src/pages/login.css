@@ -1,4 +1,5 @@
 .login_page{
+    display: flex; 
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -22,7 +23,7 @@
     width: 100%; 
     max-width: 6rem;
     height: 30; 
-    font-size: 2.5rem;
+    font-size: 5rem;
     color: black; 
 }
 .main_screen{
@@ -39,7 +40,6 @@
     align-items: center;
 }
 .login_box{
-    border: solid black; 
     display: flex; 
     align-items: center;
     justify-content: center;
@@ -48,15 +48,15 @@
     height: 60vh; 
     background-color: white;
     border-radius: 25px;
-    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
 
 }
 
 #login_form{
     display: flex; 
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column; 
-    width: 90%; 
+    width: 95%; 
     padding-left: 10px; 
     box-sizing: border-box;
     height: 60vh; 
@@ -64,35 +64,36 @@
 }
 .login_title{
     font-size: 50px;
+    width: 100%; 
     font-weight: normal;
     align-self: center;
-   
 }
-form .text_field {
-    display: flex;
-    border-bottom: 1px solid black;
-    margin: 60px 0;
+.message{
+    padding-bottom: 20px; 
+    font-size: 17px; 
+}
+.space-between{
+    width: 100%; 
+    height:0.75rem;
 }
 
-.text_field input{
-    height: 40px;
-    width: 100%;
+.text_field {
+    display: flex;
+    
+}
+.space-between2{
+    width:2rem; 
+}
+input{
+    border: solid black 1px;
+    border-radius: 5px; 
+    height: 50px;
+    width: 100%; 
     padding: 0 5px;
     font-size: 20px;
-    border: none;
+  
     background: none;
     outline: none;
-}
-
-.text_field label{
-    position: absolute;
-    top: 50%;
-    left: 5px;
-    font-weight: lighter;
-    transform: translateY(-50%);
-    font-size: 20px;
-    pointer-events: none;
-    transition: .5s;
 }
 
 .text_field span::before{
@@ -132,7 +133,6 @@ button{
 }
 
 button:hover{
-    
     cursor: pointer;
     background: #ff6884;
 }
