@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <header>
+
+    </header>
+
+    <div class="main">
+        
+        <div class="register-box">
+
+            <form action = "/register" method="POST" id="register_form">
+
+                <h1 id="register_title">Register</h1>
+                <p id="register_slogan">Connect with colleagues and potential employers to achieve the dream career you deserve.</p>
+
+                <div class="text_field">
+                    <input type="email" id="register_email" name="register_email" value ="{{request.form.email}}" required>
+                    <span></span>
+                    <label>email</label>
+                </div>
+                
+                <div class="text_field">
+                    <input type="password" id="register_password" name="register_password" value ="{{request.form.password}}" required>
+                    <span></span>
+                    <label>password</label>
+                </div>
+
+                <div class="text_field">
+                    <input type="password" id="register_password" name="register_password" value ="{{request.form.password}}" required>
+                    <span></span>
+                    <label>confirm password</label>
+                </div>
+
+                <!-- <a href="/register" id="forgot_password">Forgot password?</a> -->
+                <a href="/home" id="register">na</a>
+
+                <button type="submit">Register</button>
+
+
+            </form>
+
+        </div>
+        
+    </div>
+
+    <footer>
+
+    </footer>
+
+</body>
+</html>
+
+
+<style>
+    body{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Arial, sans-serif;
+        overflow: hidden;
+    }
+    .main{
+        height: 100vh;
+        width: 100%;
+    }
+
+    .register-box{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 500px;
+        height: 70%;
+        background-color: white;
+        border-radius: 25px;
+        box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.2);
+        
+
+    }
+
+    #register_form{
+        padding: 0 50px;
+        box-sizing: border-box;
+       
+    }
+
+
+   
+    form .text_field {
+        position: relative;
+        border-bottom: 1px solid black;
+        margin: 60px 0;
+    }
+
+    .text_field input{
+        height: 40px;
+        width: 100%;
+        padding: 0 5px;
+        font-size: 20px;
+        border: none;
+        background: none;
+        outline: none;
+    }
+
+    .text_field label{
+        position: absolute;
+        top: 50%;
+        left: 5px;
+        font-weight: lighter;
+        transform: translateY(-50%);
+        font-size: 20px;
+        pointer-events: none;
+        transition: .5s;
+    }
+
+    .text_field span::before{
+        content: '';
+        position: absolute;
+        top: 40px;
+        left: 0;
+        width: 0%;
+        height: 1px;
+        background: #6c63ff;
+    }
+
+    .text_field input:focus ~ label,
+    .text_field input:valid ~ label{
+        top: -5px;
+        color: #6c63ff;
+
+    }
+
+    .text_field input:focus ~ span::before,
+    .text_field input:valid ~ span::before{
+        width: 100%;
+    }
+    button{
+        
+        width: 100%;
+        height: 70px;
+        border: none;
+        background: #6c63ff;
+        border-radius: 50px;
+        color: white;
+        font-weight: lighter;
+        font-size: 20px;
+        font-family: "Segoe UI", Arial, sans-serif;
+        margin: 40px 0 0 0 ;
+        transition: .2s;
+    }
+
+    button:hover{
+        
+        cursor: pointer;
+        background: #ff6884;
+    }
+
+    #register_title{
+        font-size: 50px;
+        font-weight: normal;
+    }
+    #register_slogan{
+        font-size: 22px;
+        font-weight: lighter;
+        
+    }
+    #forgot_password{
+        font-size: 20px;
+    }
+</style>
