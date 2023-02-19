@@ -2,6 +2,7 @@ import "./login.css"
 import React from 'react' 
 import logo from "../Components/photo/wejob-low-resolution-logo-color-on-transparent-background.png";
 import Footer from "../Components/footer"
+import girl from "../Components/photo/undraw_Exams_re_4ios (1).png"
 /** implemented log in page as isolated page without any footer */ 
 
 
@@ -16,11 +17,11 @@ function Login() {
             </header>
             <div class="main_screen">
                 <div class="photo-space">
-                    this is a photo spaceee
+                    <img src= {girl}/>
                 </div>
                 <div class="login_box">
                     <form action = "/login" method="POST" id="login_form">
-
+                        <div class="space1"></div>
                     <h1 class="login_title">Sign in</h1>
                     <h2 class="message">Stay updated on your professional world </h2>
                     <div class="space-between"></div>

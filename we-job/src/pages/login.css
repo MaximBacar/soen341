@@ -23,21 +23,28 @@
     width: 100%; 
     max-width: 6rem;
     height: 30; 
-    font-size: 5rem;
+    font-size: 4.5rem;
     color: black; 
 }
 .main_screen{
     width: 100%; 
     display: flex;
-    height: 60vh; 
+    height: 100vh; 
     justify-content: flex-start;
 }
 .photo-space{
     display: flex;
+    align-items: center;
+    justify-content: center;
     width: 50%; 
     max-width: 50%; 
     align-content: center;
     align-items: center;
+}
+img {
+    display: flex;
+    width: 70%;
+    height: 70%; 
 }
 .login_box{
     display: flex; 
@@ -48,7 +55,8 @@
     height: 60vh; 
     background-color: white;
     border-radius: 25px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+    border: solid #d3d3d3;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4); 
 
 }
 
@@ -61,6 +69,9 @@
     box-sizing: border-box;
     height: 60vh; 
 
+}
+.space1{
+    height: 30px; 
 }
 .login_title{
     font-size: 50px;
@@ -85,8 +96,8 @@
     width:2rem; 
 }
 input{
-    border: solid black 1px;
-    border-radius: 5px; 
+    border: solid #d3d3d3;
+    border-radius: 10px; 
     height: 50px;
     width: 100%; 
     padding: 0 5px;
