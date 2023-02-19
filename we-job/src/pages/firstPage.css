@@ -1,0 +1,86 @@
+#firstPContainer {
+  position: absolute;
+  display: flex;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #ffff;
+}
+
+#logo {
+  display: flex;
+  align-items: center;
+  width: 200px;
+  height: 100px;
+}
+
+img {
+  object-fit: cover;
+  width: 150px;
+  height: 100px;
+}
+
+#firstPageBtn {
+  position: absolute;
+  display: flex;
+  margin-top: 10px;
+  height: 40px;
+  width: 200px;
+  right: 0;
+  align-items: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.firstPageLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  height: 100%;
+  width: 100px;
+  margin: 5px;
+  outline: none;
+  border-radius: 10px;
+  background: #28104e;
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.firstPageLink:hover {
+  background: #6237a0;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+#img {
+  position: absolute;
+  display: flex;
+  left: 800px;
+  bottom: 0;
+  height: 300px;
+  width: 300px;
+}
+
+#girl {
+  display: flex;
+  object-fit: cover;
+  width: auto;
+  height: auto;
+}
+
+#description {
+  position: absolute;
+  display: flex;
+  left: 150px;
+  top: 170px;
+  width: 700px;
+  height: 250px;
+  color: #6237a0;
+  font-weight: bold;
+  font-size: 37px;
+  text-align: center;
+  align-items: center;
+  line-height: 1.6;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}

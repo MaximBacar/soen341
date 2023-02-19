@@ -1,5 +1,5 @@
 DROP DATABASE IF EXISTS `wejob`;
-CREATE DATABSE `wejob`;
+CREATE DATABASE `wejob`;
 USE `wejob`
 
 

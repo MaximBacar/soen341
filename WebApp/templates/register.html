@@ -13,29 +13,35 @@
 
     <div class="main">
         
-        <div class="login-box">
+        <div class="register-box">
 
-            <form action = "/login" method="POST" id="login_form">
+            <form action = "/register" method="POST" id="register_form">
 
-                <h1 id="login_title">Login</h1>
-                <p id="login_slogan">Connect with colleagues and potential employers to achieve the dream career you deserve.</p>
+                <h1 id="register_title">Register</h1>
+                <p id="register_slogan">Connect with colleagues and potential employers to achieve the dream career you deserve.</p>
 
                 <div class="text_field">
-                    <input type="email" id="login_email" name="login_email" value ="{{request.form.email}}" required>
+                    <input type="email" id="register_email" name="register_email" value ="{{request.form.email}}" required>
                     <span></span>
                     <label>email</label>
                 </div>
                 
                 <div class="text_field">
-                    <input type="password" id="login_password" name="login_password" value ="{{request.form.password}}" required>
+                    <input type="password" id="register_password" name="register_password" value ="{{request.form.password}}" required>
                     <span></span>
                     <label>password</label>
                 </div>
 
-                <!-- <a href="/register" id="forgot_password">Forgot password?</a> -->
-                <a href="/register" id="register">register</a>
+                <div class="text_field">
+                    <input type="password" id="register_password" name="register_password" value ="{{request.form.password}}" required>
+                    <span></span>
+                    <label>confirm password</label>
+                </div>
 
-                <button type="submit">Login</button>
+                <!-- <a href="/register" id="forgot_password">Forgot password?</a> -->
+                <a href="/home" id="register">na</a>
+
+                <button type="submit">Register</button>
 
 
             </form>
@@ -65,7 +71,7 @@
         width: 100%;
     }
 
-    .login-box{
+    .register-box{
         position: absolute;
         top: 50%;
         left: 50%;
@@ -79,7 +85,7 @@
 
     }
 
-    #login_form{
+    #register_form{
         padding: 0 50px;
         box-sizing: border-box;
        
@@ -156,11 +162,11 @@
         background: #ff6884;
     }
 
-    #login_title{
+    #register_title{
         font-size: 50px;
         font-weight: normal;
     }
-    #login_slogan{
+    #register_slogan{
         font-size: 22px;
         font-weight: lighter;
         
