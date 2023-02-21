@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import mario from "./photo/mario.png";
 import "./navbar.css";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
     <nav class="navbar">
       <div class="navbar_container">
-        <a href="/" id="navbar_logo">
+        <Link to="/homepage" id="navbar_logo">
           We-Job
-        </a>
+        </Link>
         <div class="navbar_toggle" id="menu"></div>
         <span class="box"></span>
         <span class="box"></span>
@@ -17,19 +18,19 @@ function Navbar() {
       <ul class="navbar_menu">
         <div class="links">
           <li class="navbar_item">
-            <a href="/" class="navbar_links">
+            <Link to="/profile" class="navbar_links">
               Profile
-            </a>
+            </Link>
           </li>
           <li class="navbar_item">
-            <a href="/" class="navbar_links">
+            <Link to="/joboffer"  class="navbar_links">
               Job Offer
-            </a>
+            </Link>
           </li>
           <li class="navbar_item">
-            <a href="/" class="navbar_links">
+            <Link to="/message"  class="navbar_links">
               Messages
-            </a>
+            </Link>
           </li>
         </div>
         <div class="search-bar">
@@ -39,14 +40,14 @@ function Navbar() {
         </div>
         <div class="signup-login">
           <li class="navbar_btn">
-            <a href="/" class="button">
+            <Link to="/login" class="button">
               Log in
-            </a>
+            </Link>
           </li>
           <li class="navbar_btn">
-            <a href="/" class="button">
+            <Link to="/signup" class="button">
               Sign Up
-            </a>
+            </Link>
           </li>
         </div>
       </ul>
