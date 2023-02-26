@@ -7,7 +7,7 @@ function Navbar() {
   return (
     <nav class="navbar">
       <div class="navbar_container">
-        <Link to="/homepage" id="navbar_logo">
+        <Link to="/" exact id="navbar_logo">
           We-Job
         </Link>
         <div class="navbar_toggle" id="menu"></div>
@@ -40,7 +40,7 @@ function Navbar() {
         </div>
         <div class="signup-login">
           <li class="navbar_btn">
-            <Link to="/login" class="button">
+            <Link to="/login" exact class="button">
               Log in
             </Link>
           </li>
