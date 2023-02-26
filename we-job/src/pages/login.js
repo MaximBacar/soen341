@@ -4,7 +4,7 @@ import logo from "../Components/photo/wejob-low-resolution-logo-color-on-transpa
 import Footer from "../Components/footer";
 import girl from "../Components/photo/undraw_Exams_re_4ios (1).png";
 import { Link } from "react-router-dom"
-/** implemented log in page as isolated page without any footer */
+import { useState, useEffect } from 'react'  
 
 function Login() {
   return (
