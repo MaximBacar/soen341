@@ -4,6 +4,7 @@ import "./homepage.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { useState } from "react";
 import JobList from "../Components/jobList";
+import ProfileMini from "../Components/profileMini";
 
 function Homepage() {
   const [jobs, setJobs] = useState([
@@ -22,6 +23,7 @@ function Homepage() {
   return (
     <div id="home">
       <Navbar />
+      <ProfileMini />
       <JobList jobs={jobs} />
       <Footer />
     </div>

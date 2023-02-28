@@ -1,0 +1,11 @@
+#profile {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: white;
+  width: 24%;
+  margin: 10px;
+  height: 20%;
+  border-radius: 25px;
+  padding: 20px;
+}
