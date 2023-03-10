@@ -61,6 +61,18 @@ def auth():
     return ""
 
 
+@app.route("api/recommended", methods=['POST'])
+def recommended():
+    '''
+    Return a json of 5 recommended postings for the candidate
+    '''
+    if request.method == "POST":
+        id = request.form['id']
+
+        
+
+
+
 app.run(debug=True)
 
 
