@@ -56,9 +56,27 @@ def auth():
                 session["user"] = acc_data[1]
                 return "valid"
             else:
-                print("invalid")
+                return "invalid"
     
-    return ""
+    return f"{ session.get('user') }"
+
+
+@app.route("/api/session", methods=['GET'])
+def get_session():
+    '''
+    Return session
+    '''
+
+    status = {}
+    if session.get("user") == None:
+        status['status'] = False
+        status['id'] = None
+        
+    else:
+        status['status'] = True
+        status['id'] = session.get("user")
+    
+    return status
 
 
 @app.route("/api/recommended", methods=['GET','POST'])
@@ -75,6 +93,9 @@ def recommended():
 
     return api_interface.get_recommended_posts(1)
 
+@app.route("/api/")
+def modify_profile():
+    pass
 
 
 app.run(debug=True)

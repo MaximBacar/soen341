@@ -7,6 +7,16 @@ import JobList from "../Components/jobList";
 import ProfileMini from "../Components/profileMini";
 
 function Homepage() {
+  // var postings
+  // fetch('http://127.0.0.1:5000/api/session')
+  //   .then(response =>response.json())
+  //   .then(data =>{
+  //     postings = data;
+  //   })
+  //   .then(() =>{
+  //     console.log(postings);
+  //   })
+    
   const [jobs, setJobs] = useState([
     { title: "job1", body: "HELLO", author: "asmae", id: 1 },
     { title: "job2", body: "HELLO2", author: "asmae", id: 2 },

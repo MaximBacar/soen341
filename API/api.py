@@ -4,9 +4,13 @@ import re
 
 class api:
 
+
     
 
     def check_mail(email : str):
+        '''
+        Check if email format is valid
+        '''
         regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
         if(re.fullmatch(regex, email)):
             return True
@@ -33,6 +37,19 @@ class api:
                 else:
                     return False, None
                 
+    def modify_last_name(self, id, name):
+        with self.connection.cursor() as cursor:
+            cursor.execute(f"UPDATE `users` SET `last_name` = '{name}' WHERE `id`={id}")
+
+    def modify_first_name(self, id, name):
+        with self.connection.cursor() as cursor:
+            cursor.execute(f"UPDATE `users` SET `first_name` = '{name}' WHERE `id`={id}")
+
+    def update_password(self, id, clear_password):
+        hashed_password = hashlib.sha256(clear_password.encode()).hexdigest()
+        with self.connection.cursor() as cursor:
+            cursor.execute(f"UPDATE `users` SET `password` = '{hashed_password}' WHERE `id`={id}")
+            
     def get_recommended_posts(self, id : int) -> dict:
         with self.connection.cursor() as cursor:
                 cursor.execute(f"SELECT * FROM `user_skills` WHERE `user_id` = {id};")
@@ -83,8 +100,6 @@ class api:
                                                 "employer_id" : postings[i][4]
                                                 }
                         
-
-                    print(recommended_posts)
 
                     return recommended_posts
 
