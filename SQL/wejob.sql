@@ -71,22 +71,33 @@ INSERT INTO `users` VALUES(0,"Maxim", "Bacar", "maximbacar@hotmail.ca", "11ba658
 INSERT INTO `user_skills` VALUES(0,1,"Java programming");
 INSERT INTO `user_skills` VALUES(0,1,"C++");
 
-INSERT INTO `employers` VALUES(0,"Microsoft", "carreer@microsoft.com","9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08", "Microsoft TM", "xx");
+INSERT INTO `employers` VALUES(0,"Microsoft", "career@microsoft.com","9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08", "Microsoft TM", "xx");
 
 
 INSERT INTO `postings` VALUES(0,"C++ Developper","2023-01-31 01:15:00", "Description", 1);
-INSERT INTO `postings` VALUES(0,"Java Developper","2023-01-31 01:15:00", "Description", 1);
-INSERT INTO `postings` VALUES(0,"Android Developper","2023-01-31 01:15:00", "Develop a mobile game", 1);
+INSERT INTO `postings` VALUES(0,"Java Developper","2022-12-31 01:15:00", "Description", 1);
+INSERT INTO `postings` VALUES(0,"Android Developper","2023-02-28 01:15:00", "Develop a mobile game", 1);
 INSERT INTO `postings` VALUES(0,"Android Developper","2023-01-31 01:15:00", "Develop a new microsoft app", 1);
-INSERT INTO `postings` VALUES(0,"JavaScript Developper","2023-01-31 01:15:00", "Description", 1);
+INSERT INTO `postings` VALUES(0,"JavaScript Developper","2023-03-03 01:15:00", "Description", 1);
+INSERT INTO `postings` VALUES(0,"Backend Developper","2023-03-01 12:15:00", "Develop backend", 1);
+
 
 INSERT INTO `posting_skills` VALUES(0,1,"C++");
+
 INSERT INTO `posting_skills` VALUES(0,2,"Java programming");
+
 INSERT INTO `posting_skills` VALUES(0,3,"C++");
 INSERT INTO `posting_skills` VALUES(0,3,"Java programming");
+
 INSERT INTO `posting_skills` VALUES(0,4,"C++");
 INSERT INTO `posting_skills` VALUES(0,4,"Java programming");
+
 INSERT INTO `posting_skills` VALUES(0,5,"JavaScript");
+
+INSERT INTO `posting_skills` VALUES(0,6,"Java programming");
+INSERT INTO `posting_skills` VALUES(0,6,"C++");
+
+
 
 SELECT * FROM `users`;
 SELECT * FROM `user_skills` WHERE `user_id`=1;
