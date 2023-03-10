@@ -41,7 +41,7 @@ app.config['SECRET_KEY'] = "SOEN341"
 
 @app.route('/')
 def home():
-    return "geelo"
+    return "home"
 
 @app.route("/api/auth", methods=['POST'])
 def auth():
