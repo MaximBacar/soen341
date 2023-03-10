@@ -20,7 +20,7 @@ function Login() {
           <img src={girl} />
         </div>
         <div class="login_box">
-          <form action="/login" method="POST" id="login_form">
+          <form action="/api/auth" method="POST" id="login_form">
             <div class="space1"></div>
             <h1 class="login_title">Sign in</h1>
             <h2 class="message">Stay updated on your professional world </h2>
@@ -28,8 +28,8 @@ function Login() {
             <div class="text_field">
               <input
                 type="email"
-                id="login_email"
-                name="login_email"
+                id="email"
+                name="email"
                 placeholder="Please enter email"
                 required
               />
@@ -39,8 +39,8 @@ function Login() {
             <div class="text-field">
               <input
                 type="password"
-                id="login_password"
-                name="login_password"
+                id="password"
+                name="password"
                 placeholder="Password"
                 required
               />
