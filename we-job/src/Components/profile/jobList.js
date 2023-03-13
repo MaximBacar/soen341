@@ -6,7 +6,7 @@ const JobList = (props) => {
     <div className="jobList">
       {jobs.map((job) => (
         <div className="jobPreview" key={job.id}>
-          <h1>{job.title}</h1>
+          <h1 align="left">{job.title}</h1>
           <a href=""><h2>{job.author}</h2></a>
           <p id="job_preview_date" >Published <b>{job.date}</b></p>
           <p id="job_preview_description">{job.body}</p>
