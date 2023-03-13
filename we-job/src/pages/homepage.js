@@ -3,32 +3,37 @@ import Footer from "../Components/footer";
 import "./homepage.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { useState } from "react";
+import { useEffect } from "react";
 import JobList from "../Components/jobList";
 import ProfileMini from "../Components/profileMini";
 
 function Homepage() {
-  // var postings
-  // fetch('http://127.0.0.1:5000/api/session')
-  //   .then(response =>response.json())
-  //   .then(data =>{
-  //     postings = data;
-  //   })
-  //   .then(() =>{
-  //     console.log(postings);
-  //   })
-    
-  const [jobs, setJobs] = useState([
-    { title: "job1", body: "HELLO", author: "asmae", id: 1 },
-    { title: "job2", body: "HELLO2", author: "asmae", id: 2 },
-    { title: "job3", body: "HELLO3", author: "asmae", id: 3 },
-    { title: "job4", body: "HELLO", author: "asmae", id: 4 },
-    { title: "job4", body: "HELLO", author: "asmae", id: 5 },
-    { title: "job4", body: "HELLO", author: "asmae", id: 6 },
-    { title: "job4", body: "HELLO", author: "asmae", id: 7 },
-    { title: "job4", body: "HELLO", author: "asmae", id: 8 },
-    { title: "job4", body: "HELLO", author: "asmae", id: 9 },
-    { title: "job4", body: "HELLO", author: "asmae", id: 10 },
-  ]);
+  const [jobs, setJobs] = useState([]);
+  var j = []
+  useEffect(() => {
+    fetch("http://localhost:3000/api/recommended")
+    .then(response => response.json()).then(json => {
+      console.log("j",json);
+      if (json.length != 0){
+        var postings = []
+        for (var i = 0; i < 5; i++){
+        
+          const temp_dict = {title: json[i].name, body : json[i].description, author : "EMPLOYER", id : json[i].posting_id};
+          postings.push(temp_dict);
+          
+        }
+
+        setJobs(postings);
+      }
+      
+      
+
+    }).catch(e => {
+      console.log("e", e)
+    })
+  },[]) 
+  
+  
 
   return (
     <div id="home">

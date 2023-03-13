@@ -8,24 +8,24 @@ import { useState, useEffect } from 'react'
 
 function Login() {
   return (
-    <div class="login_page">
-      <header class="header">
+    <div className="login_page">
+      <header className="header">
         <div id="logo">
-        <Link to="/" exact><img src={logo} /></Link>
+        <Link to="/" exact="true"><img src={logo} /></Link>
         </div>
-        <p class="login-subtitle">Login</p>
+        <p className="login-subtitle">Login</p>
       </header>
-      <div class="main_screen">
-        <div class="photo-space">
+      <div className="main_screen">
+        <div className="photo-space">
           <img src={girl} />
         </div>
-        <div class="login_box">
+        <div className="login_box">
           <form action="/api/auth" method="POST" id="login_form">
-            <div class="space1"></div>
-            <h1 class="login_title">Sign in</h1>
-            <h2 class="message">Stay updated on your professional world </h2>
-            <div class="space-between"></div>
-            <div class="text_field">
+            <div className="space1"></div>
+            <h1 className="login_title">Sign in</h1>
+            <h2 className="message">Stay updated on your professional world </h2>
+            <div className="space-between"></div>
+            <div className="text_field">
               <input
                 type="email"
                 id="email"
@@ -35,8 +35,8 @@ function Login() {
               />
               <span></span>
             </div>
-            <div class="space-between"></div>
-            <div class="text-field">
+            <div className="space-between"></div>
+            <div className="text-field">
               <input
                 type="password"
                 id="password"
@@ -45,7 +45,7 @@ function Login() {
                 required
               />
               <span></span>
-              <div class="space-between"></div>
+              <div className="space-between"></div>
               <a href="./" id="forgot_password">
                 Forgot Password?
               </a>
@@ -53,7 +53,7 @@ function Login() {
             </div>
           </form>
         </div>
-        <div class="space-between2"></div>
+        <div className="space-between2"></div>
       </div>
       <Footer />
     </div>

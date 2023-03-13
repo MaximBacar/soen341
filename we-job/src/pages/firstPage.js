@@ -11,10 +11,10 @@ function firstPage() {
         <img src={logo} />
       </div>
       <div id="firstPageBtn">
-        <a class="firstPageLink" href="/">
+        <a className="firstPageLink" href="/">
           Log in
         </a>
-        <a class="firstPageLink" href="/">
+        <a className="firstPageLink" href="/">
           Sign Up
         </a>
       </div>
@@ -25,7 +25,7 @@ function firstPage() {
         Connect with colleagues and potential employers to achieve the dream
         career you deserve{" "}
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
