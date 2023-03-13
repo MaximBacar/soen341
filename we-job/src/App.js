@@ -1,4 +1,4 @@
-import Homepage from "./pages/homepage";
+import Homepage from "./pages/dashboard";
 import Login from "./pages/login";
 import React from "react";
 import "./App.css";
@@ -11,12 +11,12 @@ function App() {
   return (
 
       <Routes>
-        <Route path="/" element={<Homepage/>} />
+        <Route path="/" element={<FirstPage/>} />
+        <Route path="/dashboard" element={<Homepage/>} />
         <Route path="/Login" element={<Login/>} />
         <Route path="Profile" element={<Profile />} />
 
       </Routes>
-      // <FirstPage/>
 
   );
 }

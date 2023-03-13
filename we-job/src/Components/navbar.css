@@ -1,11 +1,13 @@
-.navbar {
+/* .navbar {
   background-color: white;
   height: 80px;
   display: flex;
   align-items: center;
   font-size: 1.2rem;
-  position: sticky;
+  position: fixed;
   top: 0;
+  left:0;
+  right: 0;
   z-index: 999;
 }
 .navbar_container {
@@ -124,4 +126,4 @@ input[type="text"] {
   background: #6237a0;
   color: white;
   transition: all 0.3s ease;
-}
+} */

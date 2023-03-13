@@ -1,0 +1,48 @@
+
+
+:root{
+    --mainColor: white;
+    --mainColorLight: #918aff;
+    --secondaryColor: #ff6884;
+    --textColor: #6c63ff;
+}
+
+.navbar_connected{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background-color: var(--mainColor );
+    color:var(--textColor);
+}
+.navbar{
+    height: 100%;
+    width: 71%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar h1{
+    color: black;
+}
+
+#menu nav{
+    height: 100%;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.navbar img{
+    position: relative;
+    width: 50%;
+    height: auto;
+
+}
+.navbar a{
+    display: flex;
+    justify-content: end;
+}
