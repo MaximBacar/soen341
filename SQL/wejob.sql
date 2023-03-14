@@ -16,7 +16,11 @@ CREATE TABLE `users` (
     `first_name` VARCHAR(64) NOT NULL,
     `last_name` VARCHAR(64) NOT NULL,
     `email` VARCHAR(255) NOT NULL UNIQUE,
-    `password` VARCHAR(255) NOT NULL
+    `password` VARCHAR(255) NOT NULL,
+    `location` VARCHAR(255),
+    `profile_picture_location` VARCHAR(255),
+    `banner_picture_location` VARCHAR(255),
+    `about` TEXT
 );
 
 CREATE TABLE `user_skills` ( 
@@ -34,6 +38,7 @@ CREATE TABLE `postings` (
     `post_time` DATETIME NOT NULL,
     `description` TEXT NOT NULL,
     `employer_id` INT NOT NULL,
+    `salary`FLOAT,
     FOREIGN KEY (`employer_id`) REFERENCES `employers`(`id`) 
 );
 
@@ -67,19 +72,19 @@ CREATE TABLE `messages`(
 );
 
 
-INSERT INTO `users` VALUES(0,"Maxim", "Bacar", "maximbacar@hotmail.ca", "11ba65852271cd24c56c865a9635b90616326949ff2bf6cd07eacaf788bad320");
+INSERT INTO `users` VALUES(0,"Maxim", "Bacar", "maximbacar@hotmail.ca", "11ba65852271cd24c56c865a9635b90616326949ff2bf6cd07eacaf788bad320", NULL,NULL,NULL,"Full-time Computer Engineering student at Concordia University in Montreal. I mainly code in Java, Python, and C++. Basic notions of MySQL, HTML/CSS, Assembly, and VHDL. I have been coding since the age of 11. Throughout the years, I had the chance to be part of school programs dedicated to programming, from high school to university.");
 INSERT INTO `user_skills` VALUES(0,1,"Java programming");
 INSERT INTO `user_skills` VALUES(0,1,"C++");
 
 INSERT INTO `employers` VALUES(0,"Microsoft", "career@microsoft.com","9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08", "Microsoft TM", "xx");
 
 
-INSERT INTO `postings` VALUES(0,"C++ Developper","2023-01-31 01:15:00", "Description", 1);
-INSERT INTO `postings` VALUES(0,"Java Developper","2022-12-31 01:15:00", "Description", 1);
-INSERT INTO `postings` VALUES(0,"Android Developper","2023-02-28 01:15:00", "Develop a mobile game", 1);
-INSERT INTO `postings` VALUES(0,"Android Developper","2023-01-31 01:15:00", "Develop a new microsoft app", 1);
-INSERT INTO `postings` VALUES(0,"JavaScript Developper","2023-03-03 01:15:00", "Description", 1);
-INSERT INTO `postings` VALUES(0,"Backend Developper","2023-03-01 12:15:00", "Develop backend", 1);
+INSERT INTO `postings` VALUES(0,"C++ Developper","2023-01-31 01:15:00", "Description", 1, 150000.00);
+INSERT INTO `postings` VALUES(0,"Java Developper","2022-12-31 01:15:00", "Description", 1, 100000.00);
+INSERT INTO `postings` VALUES(0,"Android Developper","2023-02-28 01:15:00", "Develop a mobile game", 1, 95000.00);
+INSERT INTO `postings` VALUES(0,"Android Developper","2023-01-31 01:15:00", "Develop a new microsoft app", 1, 95000.00);
+INSERT INTO `postings` VALUES(0,"JavaScript Developper","2023-03-03 01:15:00", "Description", 1, 50000.00);
+INSERT INTO `postings` VALUES(0,"Backend Developper","2023-03-01 12:15:00", "Develop backend", 1, 120000.00 );
 
 
 INSERT INTO `posting_skills` VALUES(0,1,"C++");

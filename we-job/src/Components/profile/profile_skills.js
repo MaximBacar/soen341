@@ -23,12 +23,8 @@ function Profile_skills() {
           
         }
         
-        setSkills(skill_list);
-        
+        setSkills(skill_list); 
       }
-      
-      
-
     }).catch(e => {
       console.log("e", e)
     })

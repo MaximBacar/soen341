@@ -1,28 +1,59 @@
 import React from "react";
 import "./styles/profile_info.css";
 
-function profile_info() {
+import { useState, useEffect } from "react";
+
+
+
+function Profile_info(props) {
+
+
+  const info = props.info;
+
+  // const [info, setInfo] = useState({});
+
+  // useEffect(() => {
+  //   fetch("http://localhost:3000/api/user")
+  //   .then(response => response.json()).then(json => {
+  //     console.log(json)
+  //     if (json.length != 0){
+        
+  //       setInfo(json); 
+  //     }
+  //   }).catch(e => {
+  //     console.log("e", e)
+  //   })
+  // },[]) 
+
+  // console.log(info);
+
+  const profilePicMenu = () => {
+
+  }
+
   return (
     <div className="info">
+      
 
       <div id="background_image">
-        <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Y29kaW5nfGVufDB8fDB8fA%3D%3D&w=1000&q=80"/>
+
+        <img src={require("../../user-data/banner-pictures/1.jpg")}/>
       </div>
 
-      <span id="circle">
+      <span id="circle" onClick={profilePicMenu}>
         <img src="https://img.icons8.com/ios/100/null/compact-camera.png"/>
       </span>
 
       <div id="info_text">
         <div id="personal_info">
-          <h1>Maxim Bacar</h1>
+          <h1>{info.first_name} {info.last_name}</h1>
           <p>Full time Computer Engineering student at Concordia University</p>
         </div>
         <div id="contact">
           <div id="personal_info_text">
               <div id="info_element">
               <img src="https://img.icons8.com/external-kmg-design-glyph-kmg-design/64/null/external-email-business-management-kmg-design-glyph-kmg-design.png"/>
-                  <p>maximbacar@hotmail.ca</p>
+                  <p>{info.email}</p>
               </div>
 
               <div id="info_element">
@@ -41,10 +72,12 @@ function profile_info() {
           </div>
         </div>
       </div>
+
+
       
  
     </div>
   );
 }
 
-export default profile_info;
+export default Profile_info;

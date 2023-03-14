@@ -8,6 +8,7 @@ import Experience from "../Components/profile/profile_experience";
 import Education from "../Components/profile/profile_education";
 
 
+
 import "./styles/dashboard.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { useState } from "react";
@@ -34,9 +35,22 @@ function Dashboard() {
 
         setJobs(postings);
       }
-      
-      
+    
+    }).catch(e => {
+      console.log("e", e)
+    })
+  },[]) 
 
+  const [info, setInfo] = useState({});
+
+  useEffect(() => {
+    fetch("http://localhost:3000/api/user")
+    .then(response => response.json()).then(json => {
+      console.log(json)
+      if (json.length != 0){
+        
+        setInfo(json); 
+      }
     }).catch(e => {
       console.log("e", e)
     })
@@ -51,16 +65,18 @@ function Dashboard() {
       </header>
 
       <div className="dashboard">
+
+        
         
         <div className="profile">
-          <Info/>
-          <About/>
+          <Info info={info}/>
+          <About text={info.about}/>
           <Experience/>
           <Education/>
           <Skills/>
         </div>
         <div className="recommended">
-          Recommended job offers
+          <h2>Recommended job offers</h2>
           <JobList jobs={jobs} />
         </div>
       </div>

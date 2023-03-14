@@ -13,6 +13,10 @@ function Dashboard() {
 
         <Navbar/>
 
+        <div className="postings">
+            
+        </div>
+
     </div>
 
   );

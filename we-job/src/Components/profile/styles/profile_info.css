@@ -47,6 +47,10 @@
   
 }
 
+#circle:hover{
+  cursor: pointer;
+}
+
 #personal_info{
   display: flex;
   flex-direction: column;
@@ -65,8 +69,6 @@
   
 
 }
-
-
 
 #info_text h1{
   font-size: 35px;

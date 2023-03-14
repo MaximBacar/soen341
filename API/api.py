@@ -50,6 +50,18 @@ class api:
         with self.connection.cursor() as cursor:
             cursor.execute(f"UPDATE `users` SET `password` = '{hashed_password}' WHERE `id`={id}")
 
+    def get_user(self, id):
+        with self.connection.cursor() as cursor:
+            cursor.execute(f"SELECT `id`, `first_name`, `last_name`, `email`, `location`, `profile_picture_location`, `banner_picture_location`, `about` FROM `users` WHERE `id` = {id};")
+            user = cursor.fetchall()
+            print(user)
+            return {"id" : user[0][0], "first_name" : user[0][1], "last_name" : user[0][2], "email" : user[0][3], "location" : user[0][4], "pfp" : user[0][5], "banner" : user[0][6], "about" : user[0][7]}
+            
+        
+    def set_about(self, id, text):
+         with self.connection.cursor() as cursor:
+            cursor.execute(f"UPDATE `users` SET `about` = '{text}' WHERE `id`={id}")
+
     def get_skills(self, id : int) -> dict:
         with self.connection.cursor() as cursor:
             cursor.execute(f"SELECT * FROM `user_skills` WHERE `user_id` = {id};")
@@ -59,7 +71,6 @@ class api:
                     skills["skills"][i] = {"skill_id" : user_skills[i][0], "user_id" : user_skills[i][1], "skill_name" : user_skills[i][2]}
 
             
-            print(skills)
 
             return skills
             
@@ -77,7 +88,7 @@ class api:
                             sql_request = sql_request + f"'{user_skills[i][2]}'"
                     sql_request = sql_request +";"
 
-                    print(sql_request)
+
                     
                     cursor.execute(sql_request)
                     posting_skills = cursor.fetchall()

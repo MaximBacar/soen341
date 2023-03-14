@@ -1,4 +1,4 @@
-from flask import Flask, request, session
+from flask import Flask, request, session, redirect
 from api import api
 import os
 from mysql.connector import connect, Error
@@ -97,7 +97,23 @@ def recommended():
 def skills():
     return api_interface.get_skills(1)
 
-@app.route("/api/")
+
+@app.route("/api/user", methods=['GET', 'POST'])
+def user():
+        return api_interface.get_user(1)
+
+@app.route("/api/updateAbout", methods=['POST'])
+def set_about():
+    if request.method == "POST":
+        id = request.form["user_id"]
+        text = request.form["text"]
+
+        api_interface.set_about(id, text)
+
+    return redirect("http://localhost:3000/dashboard/")
+
+
+@app.route("/api/m")
 def modify_profile():
     pass
 
