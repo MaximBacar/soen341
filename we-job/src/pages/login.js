@@ -1,4 +1,4 @@
-import "./login.css";
+import "./styles/login.css";
 import React from "react";
 import logo from "../Components/photo/wejob-low-resolution-logo-color-on-transparent-background.png";
 import Footer from "../Components/footer";

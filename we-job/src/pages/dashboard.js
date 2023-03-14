@@ -8,7 +8,7 @@ import Experience from "../Components/profile/profile_experience";
 import Education from "../Components/profile/profile_education";
 
 
-import "./dashboard.css";
+import "./styles/dashboard.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { useState } from "react";
 import { useEffect } from "react";

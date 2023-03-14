@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../Components/photo/wejob-low-resolution-logo-color-on-transparent-background.png";
-import "./firstPage.css";
+import "./styles/firstPage.css";
 import Footer from "../Components/footer";
 import girl from "../Components/photo/undraw_Exams_re_4ios (1).png";
 
