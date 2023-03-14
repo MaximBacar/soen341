@@ -1,6 +1,6 @@
-import React from "react";
+
 import {FaBars, FaTimes} from "react-icons/fa";
-import {useRef} from "react";
+import {useState, useEffect, useRef} from "react";
 
 import "./navbar_connected.css";
 
@@ -10,12 +10,30 @@ import "./navbar_connected.css";
  */
 function Navbar() {
 
-    const navRef = useRef();
+    
+    const [visible, setVisible] = useState(false);
+    const ref = useRef();
 
-    //  Function to display or not the nav bar
-    const showNavbar = () => {
-        navRef.current.classList.toggle("responsive_nav");
+    const openMenu = () => {
+        setVisible(true);
     }
+
+    const handleClickOutside = (event) => {
+        if (ref.current && !ref.current.contains(event.target)) {
+          setVisible(false);
+        }
+      };
+    
+      useEffect(() => {
+        document.addEventListener('mousedown', handleClickOutside);
+    
+        return () => {
+          document.removeEventListener('mousedown', handleClickOutside);
+        };
+      }, []);
+
+
+   
 
   return (
     <div className="navbar_connected">
@@ -23,19 +41,29 @@ function Navbar() {
             <h1>weJOB.</h1>
             <div id="menu">
                 
-                <nav ref={navRef}>
-                    <a href="/profile">
+                <nav>
+                    <button onClick={openMenu}>
                         <img src="https://img.icons8.com/windows/96/null/gender-neutral-user.png"/>
-                    </a>
-                    <a href="/messages">
+                    </button>
+                    <button>
                         <img src="https://img.icons8.com/windows/96/null/chat-message.png"/>
-                    </a>
+                    </button>
                 </nav>
             </div>
             
         </div> 
         
+        {visible && <div ref={ref} className="profile_menu">
+            <h4>maximbacar@hotmail.ca</h4>
+            <button>My Account</button>
+            <button>My Jobs</button>
+            <button>Messages</button>
+            <button>Settings</button>
+            <button id="logout">Logout</button>
+        </div>}
     </div>
+
+    
   );
 }
 export default Navbar;

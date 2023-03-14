@@ -4,6 +4,9 @@ import About from "../Components/profile/profile_about";
 import Info from "../Components/profile/profile_info";
 import Skills from "../Components/profile/profile_skills";
 import JobList from "../Components/profile/jobList";
+import Experience from "../Components/profile/profile_experience";
+import Education from "../Components/profile/profile_education";
+
 
 import "./dashboard.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
@@ -11,7 +14,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 
 
-function Homepage() {
+function Dashboard() {
 
   //  List of jobs
   const [jobs, setJobs] = useState([]);
@@ -52,6 +55,8 @@ function Homepage() {
         <div className="profile">
           <Info/>
           <About/>
+          <Experience/>
+          <Education/>
           <Skills/>
         </div>
         <div className="recommended">
@@ -65,4 +70,4 @@ function Homepage() {
 
   );
 }
-export default Homepage;
+export default Dashboard;

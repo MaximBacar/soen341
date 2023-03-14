@@ -1,4 +1,4 @@
-import Homepage from "./pages/dashboard";
+import Dashboard from "./pages/dashboard";
 import Login from "./pages/login";
 import React from "react";
 import "./App.css";
@@ -12,9 +12,9 @@ function App() {
 
       <Routes>
         <Route path="/" element={<FirstPage/>} />
-        <Route path="/dashboard" element={<Homepage/>} />
+        <Route path="/dashboard" element={<Dashboard/>} />
         <Route path="/Login" element={<Login/>} />
-        <Route path="Profile" element={<Profile />} />
+        {/* <Route path="Profile" element={<Profile />} /> */}
 
       </Routes>
 

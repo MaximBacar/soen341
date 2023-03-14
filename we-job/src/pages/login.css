@@ -144,7 +144,7 @@ input{
 
 button:hover{
     cursor: pointer;
-    background: #ff6884;
+    /* background: #ff6884; */
 }
 
 
