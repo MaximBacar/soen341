@@ -18,39 +18,42 @@ import { useEffect } from "react";
 function Dashboard() {
 
   //  List of jobs
+  const [info, setInfo] = useState({});
   const [jobs, setJobs] = useState([]);
+  const [skills, setSkills] = useState([]);
+  const [userID, setUserID] = useState(2);
+  
   
   useEffect(() => {
-    fetch("http://localhost:3000/api/recommended")
+    console.log("http://localhost:3000/api/dashboard?user_id=".concat(userID.toString()));
+    fetch("http://localhost:3000/api/dashboard?user_id=".concat(userID.toString()))
     .then(response => response.json()).then(json => {
       console.log("j",json);
       if (json.length != 0){
+
+        setInfo(json["info"])
+
         var postings = []
         for (var i = 0; i < 5; i++){
         
-          const temp_dict = {title: json[i].name, body : json[i].description, author : "EMPLOYER", id : json[i].posting_id, date : json[i].date};
+          const temp_dict = {title: json["recommended_posts"][i].name, body : json["recommended_posts"][i].description, author : "EMPLOYER", id : json["recommended_posts"][i].posting_id, date : json["recommended_posts"][i].date};
           postings.push(temp_dict);
           
         }
 
         setJobs(postings);
+
+
+        var skill_list = []
+        for (var i = 0; i < json["skills"].nbElement; i++){
+          const temp_dict = {title: json["skills"].skills[i].skill_name, id : json["skills"].skills[i].skill_id};
+          skill_list.push(temp_dict);
+          
+        }
+        
+        setSkills(skill_list); 
       }
     
-    }).catch(e => {
-      console.log("e", e)
-    })
-  },[]) 
-
-  const [info, setInfo] = useState({});
-
-  useEffect(() => {
-    fetch("http://localhost:3000/api/user")
-    .then(response => response.json()).then(json => {
-      console.log(json)
-      if (json.length != 0){
-        
-        setInfo(json); 
-      }
     }).catch(e => {
       console.log("e", e)
     })
@@ -70,10 +73,10 @@ function Dashboard() {
         
         <div className="profile">
           <Info info={info}/>
-          <About text={info.about}/>
+          <About info={info}/>
           <Experience/>
           <Education/>
-          <Skills/>
+          <Skills skills={skills}/>
         </div>
         <div className="recommended">
           <h2>Recommended job offers</h2>

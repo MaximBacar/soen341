@@ -10,22 +10,13 @@ function Profile_info(props) {
 
   const info = props.info;
 
-  // const [info, setInfo] = useState({});
+  var banner_url = info.banner;
+  if(banner_url == undefined){
+    banner_url = "1.jpg";
+  }
 
-  // useEffect(() => {
-  //   fetch("http://localhost:3000/api/user")
-  //   .then(response => response.json()).then(json => {
-  //     console.log(json)
-  //     if (json.length != 0){
-        
-  //       setInfo(json); 
-  //     }
-  //   }).catch(e => {
-  //     console.log("e", e)
-  //   })
-  // },[]) 
 
-  // console.log(info);
+
 
   const profilePicMenu = () => {
 
@@ -36,8 +27,7 @@ function Profile_info(props) {
       
 
       <div id="background_image">
-
-        <img src={require("../../user-data/banner-pictures/1.jpg")}/>
+        <img src={require("../../user-data/banner-pictures/".concat(banner_url))}/>
       </div>
 
       <span id="circle" onClick={profilePicMenu}>

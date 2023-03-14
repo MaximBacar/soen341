@@ -7,28 +7,9 @@ import { useEffect } from "react";
 import SkillList from "../profile/SkillList";
 
 
-function Profile_skills() {
+function Profile_skills(props) {
 
-  const [skills, setSkills] = useState([]);
-
-  useEffect(() => {
-    fetch("http://localhost:3000/api/skills")
-    .then(response => response.json()).then(json => {
-      console.log(json.length)
-      if (json.length != 0){
-        var skill_list = []
-        for (var i = 0; i < json.nbElement; i++){
-          const temp_dict = {title: json.skills[i].skill_name, id : json.skills[i].skill_id};
-          skill_list.push(temp_dict);
-          
-        }
-        
-        setSkills(skill_list); 
-      }
-    }).catch(e => {
-      console.log("e", e)
-    })
-  },[]) 
+  const skills = props.skills;
 
   return (
     <div className="section">

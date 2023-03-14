@@ -73,6 +73,14 @@ class api:
             
 
             return skills
+        
+
+    def dashboard(self, id : int):
+        response = {}
+        response["info"] = self.get_user(id)
+        response["recommended_posts"] = self.get_recommended_posts(id)
+        response["skills"] = self.get_skills(id)
+        return response
             
     def get_recommended_posts(self, id : int) -> dict:
         with self.connection.cursor() as cursor:

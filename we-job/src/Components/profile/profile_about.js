@@ -3,7 +3,9 @@ import "./styles/profile_about.css";
 import "./styles/sections.css";
 
 function Profile_about(prop) {
-  const aboutText = prop.text;
+  const info = prop.info;
+
+  const aboutText = info.about
 
   const [editMode, setEditMode] = useState(false);
 
@@ -37,7 +39,7 @@ function Profile_about(prop) {
           <br />
         </p>}
         {editMode && <form action="/api/updateAbout" method="POST" id="about_form">
-          <input name="user_id" type="text" value="1" hidden></input>
+          <input name="user_id" type="text" value={info.id.toString()} hidden></input>
           <textarea name="text" defaultValue={aboutText} id="about_textarea" rows="18"/>
           
           <button type="submit">Save</button>

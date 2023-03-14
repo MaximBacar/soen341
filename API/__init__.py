@@ -1,4 +1,4 @@
-from flask import Flask, request, session, redirect
+from flask import Flask, request, session, redirect, make_response
 from api import api
 import os
 from mysql.connector import connect, Error
@@ -112,6 +112,13 @@ def set_about():
 
     return redirect("http://localhost:3000/dashboard/")
 
+@app.route("/api/dashboard", methods=['GET'])
+def dashboard():
+    id = request.args.get("user_id")
+
+    if id == None:
+        return make_response("Invalid user id", 400)
+    return api_interface.dashboard(id)
 
 @app.route("/api/m")
 def modify_profile():

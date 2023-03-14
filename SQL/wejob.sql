@@ -72,9 +72,14 @@ CREATE TABLE `messages`(
 );
 
 
-INSERT INTO `users` VALUES(0,"Maxim", "Bacar", "maximbacar@hotmail.ca", "11ba65852271cd24c56c865a9635b90616326949ff2bf6cd07eacaf788bad320", NULL,NULL,NULL,"Full-time Computer Engineering student at Concordia University in Montreal. I mainly code in Java, Python, and C++. Basic notions of MySQL, HTML/CSS, Assembly, and VHDL. I have been coding since the age of 11. Throughout the years, I had the chance to be part of school programs dedicated to programming, from high school to university.");
+INSERT INTO `users` VALUES(0,"Maxim", "Bacar", "maximbacar@hotmail.ca", "11ba65852271cd24c56c865a9635b90616326949ff2bf6cd07eacaf788bad320", NULL,NULL,"1.jpg","Full-time Computer Engineering student at Concordia University in Montreal. I mainly code in Java, Python, and C++. Basic notions of MySQL, HTML/CSS, Assembly, and VHDL. I have been coding since the age of 11. Throughout the years, I had the chance to be part of school programs dedicated to programming, from high school to university.");
+INSERT INTO `users` VALUES(0,"Asmae", "Loulidi", "loulidiasmae@gmail.com", "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08", NULL,NULL,"2.jpg","Software engineering student at concordia university");
 INSERT INTO `user_skills` VALUES(0,1,"Java programming");
 INSERT INTO `user_skills` VALUES(0,1,"C++");
+
+INSERT INTO `user_skills` VALUES(0,2,"Java programming");
+INSERT INTO `user_skills` VALUES(0,2,"C++");
+INSERT INTO `user_skills` VALUES(0,2,"JavaScript");
 
 INSERT INTO `employers` VALUES(0,"Microsoft", "career@microsoft.com","9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08", "Microsoft TM", "xx");
 
