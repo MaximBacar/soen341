@@ -1,0 +1,22 @@
+#show_skills_btn{
+    
+    border-radius: 15px;
+    width: 100%;
+    height: 40px;
+    border: none;
+    font-size: 16px;
+    margin-top: 20px;
+    background-color: #f2f2f2;
+    transition: 0.2s ease-in;
+    color: black;
+    
+
+}
+
+#show_skills_btn:hover{
+    box-shadow: 0 0 4px #918aff;
+    background-color: white;
+    transition: 0.2s ease-out;
+    font-weight: bold;
+    color: #918aff;
+}

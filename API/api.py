@@ -49,6 +49,19 @@ class api:
         hashed_password = hashlib.sha256(clear_password.encode()).hexdigest()
         with self.connection.cursor() as cursor:
             cursor.execute(f"UPDATE `users` SET `password` = '{hashed_password}' WHERE `id`={id}")
+
+    def get_skills(self, id : int) -> dict:
+        with self.connection.cursor() as cursor:
+            cursor.execute(f"SELECT * FROM `user_skills` WHERE `user_id` = {id};")
+            user_skills = cursor.fetchall()
+            skills = {"nbElement" : len(user_skills), "skills" : {}}
+            for i in range (len(user_skills)):
+                    skills["skills"][i] = {"skill_id" : user_skills[i][0], "user_id" : user_skills[i][1], "skill_name" : user_skills[i][2]}
+
+            
+            print(skills)
+
+            return skills
             
     def get_recommended_posts(self, id : int) -> dict:
         with self.connection.cursor() as cursor:

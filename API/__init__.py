@@ -93,6 +93,10 @@ def recommended():
 
     return api_interface.get_recommended_posts(1)
 
+@app.route("/api/skills", methods=['GET', 'POST'])
+def skills():
+    return api_interface.get_skills(1)
+
 @app.route("/api/")
 def modify_profile():
     pass

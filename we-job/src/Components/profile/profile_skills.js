@@ -1,9 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles/profile_skills.css";
 import "./styles/sections.css";
 
+import { useEffect } from "react";
 
-function profile_skills() {
+import SkillList from "../profile/SkillList";
+
+
+function Profile_skills() {
+
+  const [skills, setSkills] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/api/skills")
+    .then(response => response.json()).then(json => {
+      console.log(json.length)
+      if (json.length != 0){
+        var skill_list = []
+        for (var i = 0; i < json.nbElement; i++){
+          const temp_dict = {title: json.skills[i].skill_name, id : json.skills[i].skill_id};
+          skill_list.push(temp_dict);
+          
+        }
+        
+        setSkills(skill_list);
+        
+      }
+      
+      
+
+    }).catch(e => {
+      console.log("e", e)
+    })
+  },[]) 
+
   return (
     <div className="section">
 
@@ -16,10 +46,11 @@ function profile_skills() {
         </button>
       </div>
       <div id="skills">
+        <SkillList skills={skills}/>
       </div>
-      <button>Show all skills</button>
+      <button id="show_skills_btn">Show all skills</button>
     </div>
   );
 }
 
-export default profile_skills;
+export default Profile_skills;
