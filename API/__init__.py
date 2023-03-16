@@ -2,9 +2,12 @@ from flask import Flask, request, session, redirect, make_response
 from flask_restful import Resource, Api
 from flask_httpauth import HTTPBasicAuth
 from api import api
+from functools import wraps
 import os
 from mysql.connector import connect, Error
 import mysql.connector
+import jwt
+import datetime
 from getpass import getpass
 
 
@@ -39,46 +42,42 @@ app = Flask(__name__)
 
 api_interface = api(connection)
 
-app.config['SECRET_KEY'] = "SOEN341"
+app.config['SECRET_KEY'] = api_interface.key
 
 @app.route('/')
 def home():
     return "API"
 
-@app.route("/api/auth", methods=['POST'])
-def auth():
-    if session.get("user") == None:
-        if request.method == "POST":
-            email = request.form["email"]
-            password = request.form["password"]
 
+def token_required(f):
+    @wraps(f)
+    def decorated(*args, **kwargs):
+        token = request.args.get('token')
 
-            acc_data = api_interface.get_account(email=email, clear_password=password)
-            if acc_data[0] == True:
-                session["user"] = acc_data[1]
-                return "valid"
-            else:
-                return "invalid"
-    
-    return f"{ session.get('user') }"
+        response = api_interface.decode_auth_token(token)
 
-
-@app.route("/api/session", methods=['GET'])
-def get_session():
-    '''
-    Return session
-    '''
-
-    status = {}
-    if session.get("user") == None:
-        status['status'] = False
-        status['id'] = None
+        if response[0] == False:
+            return make_response("Invalid token", 403)
         
-    else:
-        status['status'] = True
-        status['id'] = session.get("user")
+        id = response[1]["user_id"]
+        
+        return f(id, *args, **kwargs)
+    return decorated
+
+@app.route("/api/auth", methods=['GET', 'POST'])
+def auth():
+
+    if request.method == "POST":
+        email = request.form["email"]
+        password = request.form["password"]
+
+        acc_data = api_interface.auth(email=email, clear_password=password)
+        if acc_data[0] == True:
+            return {"token" : acc_data[1]}
+        
     
-    return status
+    return "invalid"
+
 
 
 @app.route("/api/updateAbout", methods=['POST'])
@@ -92,14 +91,25 @@ def set_about():
     return redirect("http://localhost:3000/dashboard/")
 
 @app.route("/api/dashboard", methods=['GET'])
-def dashboard():
-    id = request.args.get("user_id")
-
+@token_required
+def dashboard(id):
+    
     if id == None:
         return make_response("Invalid user id", 400)
     return api_interface.dashboard(id)
 
 
+
+
+
+@app.route("/api/testauth")
+def testauth():
+    auth = request.authorization
+
+    if auth and auth.password == 'password':
+        token = jwt.encode({'user' : auth.username, 'exp' : datetime.datetime.utcnow() + datetime.timedelta(minutes=30)}, app.config["SECRET_KEY"])
+        return {'token':token}
+    return make_response("Couldn't authentificate", 401, {'WWW-Authenticate' : 'Basic realm="Login Required"'})
 
 app.run(debug=True)
 

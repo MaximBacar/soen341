@@ -1,10 +1,13 @@
 import mysql.connector
 import hashlib
 import re
+import jwt
+import datetime
+
+
+
 
 class api:
-
-
     
 
     def check_mail(email : str):
@@ -21,19 +24,18 @@ class api:
         account = data[0]
         return account
 
-    def get_account(self, email : str, clear_password : str) -> bool|int:
+    def auth(self, email : str, clear_password : str) -> bool|int:
         hashed_password = hashlib.sha256(clear_password.encode()).hexdigest()
 
         if api.check_mail(email) == False:
             return False, None
-        
        
         with self.connection.cursor() as cursor:
                 cursor.execute(f"SELECT * FROM `users` WHERE `email` = '{email}' AND `password` = '{hashed_password}';")
                 results = cursor.fetchall()
 
                 if len(results) > 0:
-                    return True, api.user_db_to_account(results[0])
+                    return True, self.generate_auth_token(results[0][0])
                 else:
                     return False, None
                 
@@ -81,6 +83,19 @@ class api:
         response["recommended_posts"] = self.get_recommended_posts(id)
         response["skills"] = self.get_skills(id)
         return response
+    
+    def generate_auth_token(self, id : int):
+        token = jwt.encode({'user_id' : id, 'exp' : datetime.datetime.utcnow() + self.token_exp},  self.key)
+
+        return token
+    
+    def decode_auth_token(self, token):
+        
+        try:
+            data = jwt.decode(token, self.key, algorithms=["HS256"])
+            return True, {"user_id" : data["user_id"]}
+        except:
+            return False, {}
             
     def get_recommended_posts(self, id : int) -> dict:
         with self.connection.cursor() as cursor:
@@ -148,3 +163,8 @@ class api:
 
     def __init__(self, mysql_connection) -> None:
         self.connection = mysql_connection
+
+
+        self.token_exp = datetime.timedelta(minutes=30)
+        self.key = "SOEN341"
+
