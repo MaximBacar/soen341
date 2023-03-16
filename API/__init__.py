@@ -1,4 +1,6 @@
 from flask import Flask, request, session, redirect, make_response
+from flask_restful import Resource, Api
+from flask_httpauth import HTTPBasicAuth
 from api import api
 import os
 from mysql.connector import connect, Error
@@ -79,29 +81,6 @@ def get_session():
     return status
 
 
-@app.route("/api/recommended", methods=['GET','POST'])
-def recommended():
-    '''
-    Return a json of 5 recommended postings for the candidate
-    '''
-    
-    if request.method == "POST":
-        id = request.form['id']
-
-        pass
-    
-
-    return api_interface.get_recommended_posts(1)
-
-@app.route("/api/skills", methods=['GET', 'POST'])
-def skills():
-    return api_interface.get_skills(1)
-
-
-@app.route("/api/user", methods=['GET', 'POST'])
-def user():
-        return api_interface.get_user(1)
-
 @app.route("/api/updateAbout", methods=['POST'])
 def set_about():
     if request.method == "POST":
@@ -120,9 +99,6 @@ def dashboard():
         return make_response("Invalid user id", 400)
     return api_interface.dashboard(id)
 
-@app.route("/api/m")
-def modify_profile():
-    pass
 
 
 app.run(debug=True)

@@ -21,14 +21,13 @@ function Dashboard() {
   const [info, setInfo] = useState({});
   const [jobs, setJobs] = useState([]);
   const [skills, setSkills] = useState([]);
-  const [userID, setUserID] = useState(2);
+  const [userID, setUserID] = useState(1);
   
   
   useEffect(() => {
     console.log("http://localhost:3000/api/dashboard?user_id=".concat(userID.toString()));
     fetch("http://localhost:3000/api/dashboard?user_id=".concat(userID.toString()))
     .then(response => response.json()).then(json => {
-      console.log("j",json);
       if (json.length != 0){
 
         setInfo(json["info"])
@@ -68,9 +67,6 @@ function Dashboard() {
       </header>
 
       <div className="dashboard">
-
-        
-        
         <div className="profile">
           <Info info={info}/>
           <About info={info}/>

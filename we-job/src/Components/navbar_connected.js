@@ -32,6 +32,13 @@ function Navbar() {
         };
       }, []);
 
+      function toProfile(){
+        window.location.replace("/dashboard");
+      }
+
+      function toJobs(){
+        window.location.replace("/feed");
+      }
 
    
 
@@ -55,8 +62,8 @@ function Navbar() {
         
         {visible && <div ref={ref} className="profile_menu">
             <h4>maximbacar@hotmail.ca</h4>
-            <button>My Account</button>
-            <button>My Jobs</button>
+            <button onClick={toProfile}>My Account</button>
+            <button onClick={toJobs}>My Jobs</button>
             <button>Messages</button>
             <button>Settings</button>
             <button id="logout">Logout</button>

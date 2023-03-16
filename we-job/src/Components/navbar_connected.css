@@ -10,7 +10,7 @@
 .navbar_connected{
     display: flex;
     justify-content: center;
-    height: 100%;
+    height: 80px;
     width: 100%;
     background-color: var(--mainColor );
     color:var(--textColor);
