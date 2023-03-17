@@ -9,7 +9,7 @@ import "./navbar_connected.css";
  * Navbar when the user is connected
  * @returns 
  */
-function Navbar() {
+function Navbar_Con() {
 
     
     const [visible, setVisible] = useState(false);
@@ -38,6 +38,7 @@ function Navbar() {
         };
       }, []);
 
+
       function toProfile(){
         window.location.replace("/dashboard");
       }
@@ -51,7 +52,7 @@ function Navbar() {
   return (
     <div className="navbar_connected">
          <div className="navbar">
-            <h1>weJOB.</h1>
+            <h1 onClick={toJobs}>weJOB.</h1>
             <div id="menu">
                 
                 <nav>
@@ -79,4 +80,4 @@ function Navbar() {
     
   );
 }
-export default Navbar;
+export default Navbar_Con;

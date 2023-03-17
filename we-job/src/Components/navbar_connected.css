@@ -25,6 +25,7 @@
 }
 .navbar h1{
     color: black;
+    cursor: pointer;
 }
 
 #menu nav{

@@ -3,7 +3,7 @@ import Login from "./pages/login";
 import Register from "./pages/register";
 import React, { createContext, useState, useEffect } from 'react';
 import "./App.css";
-import FirstPage from "./pages/firstPage";
+import Homepage from "./pages/homepage";
 import Feed from "./pages/feed"
 import Cookies from "js-cookie";
 
@@ -46,7 +46,7 @@ function App() {
   return (
     
       <Routes>
-        <Route path="/" element={<AnonymousOnly Component={FirstPage} />} />
+        <Route path="/" element={<AnonymousOnly Component={Homepage} />} />
         <Route path="/dashboard" element={<Private Component={Dashboard} />} />
         <Route path="/Login" element={<AnonymousOnly Component={Login} />} />
         <Route path="/Register" element={<AnonymousOnly Component={Register} />} />

@@ -1,4 +1,4 @@
-import Navbar from "../Components/navbar_connected";
+import Navbar from "../Components/navbar";
 
 import "./styles/feed.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";

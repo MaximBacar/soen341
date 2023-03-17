@@ -2,6 +2,7 @@ import "./styles/login.css";
 import React, { useContext } from "react";
 import logo from "../Components/photo/wejob-low-resolution-logo-color-on-transparent-background.png";
 import Footer from "../Components/footer";
+import Navbar from "../Components/navbar";
 import girl from "../Components/photo/undraw_Exams_re_4ios (1).png";
 import { Link } from "react-router-dom"
 import { useState, useEffect } from 'react'  
@@ -41,12 +42,9 @@ function Login() {
 
   return (
     <div className="login_page">
-      <header className="header">
-        <div id="logo">
-        <Link to="/" exact="true"><img src={logo} /></Link>
-        </div>
-        <p className="login-subtitle">Login</p>
-      </header>
+      <div>
+        <Navbar/>
+      </div>
       <div className="main_screen">
         <div className="photo-space">
           <img src={girl} />

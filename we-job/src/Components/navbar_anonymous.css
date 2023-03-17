@@ -1,0 +1,76 @@
+
+
+:root{
+    --mainColor: white;
+    --mainColorLight: #918aff;
+    --secondaryColor: #ff6884;
+    --textColor: #6c63ff;
+}
+
+.navbar_disconnected{
+    display: flex;
+    justify-content: center;
+    height: 80px;
+    width: 100%;
+    background-color: var(--mainColor );
+    color:var(--textColor);
+}
+.navbar_d{
+    height: 100%;
+    width: 71%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar_d h1{
+    color: black;
+    cursor: pointer;
+}
+
+#menu_d{
+    height: 100%;
+}
+
+#menu_d nav{
+    height: 100%;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+  
+}
+
+.navbar_d img{
+    position: relative;
+    width: 50%;
+    height: auto;
+
+}
+.navbar_d button{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    background: none;
+    border: none;
+    height: 60%;
+    width: 250px;
+    align-items: center;
+    font-size: 18px;
+    border-radius: 25px;
+}
+
+#login_btn{
+    
+    background-color: var(--textColor);
+    color: white;
+    transition: 0.2s ease-out;
+}
+
+#login_btn:hover{
+    background-color: black;
+    color: white;
+    transition: 0.2s ease-in;
+    height: 50%;
+}

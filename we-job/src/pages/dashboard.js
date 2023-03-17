@@ -1,4 +1,4 @@
-import Navbar from "../Components/navbar_connected";
+import Navbar from "../Components/navbar";
 import React, { useContext } from 'react';
 //import Footer from "../Components/footer";
 import About from "../Components/profile/profile_about";

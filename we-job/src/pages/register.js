@@ -6,7 +6,7 @@ import girl from "../Components/photo/undraw_Exams_re_4ios (1).png";
 import { Link } from "react-router-dom"
 import { useState, useEffect } from 'react'  
 import Cookies from "js-cookie";
-import Navbar from "../Components/navbar_connected";
+import Navbar from "../Components/navbar";
 
 function Register() {
 
@@ -42,10 +42,10 @@ function Register() {
     
     <div className="register_page">
         <div className="register_header">
-
+          <Navbar/>
         </div>  
 
-        {/* <Navbar/> */}
+        
 
 
 
