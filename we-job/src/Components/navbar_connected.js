@@ -1,6 +1,7 @@
 
 import {FaBars, FaTimes} from "react-icons/fa";
 import {useState, useEffect, useRef} from "react";
+import Cookies from "js-cookie";
 
 import "./navbar_connected.css";
 
@@ -16,6 +17,11 @@ function Navbar() {
 
     const openMenu = () => {
         setVisible(true);
+    }
+
+    const logout = () => {
+      Cookies.remove("auth_token");
+      window.location.replace('/');
     }
 
     const handleClickOutside = (event) => {
@@ -66,7 +72,7 @@ function Navbar() {
             <button onClick={toJobs}>My Jobs</button>
             <button>Messages</button>
             <button>Settings</button>
-            <button id="logout">Logout</button>
+            <button onClick={logout} id="logout">Logout</button>
         </div>}
     </div>
 

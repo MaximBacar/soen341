@@ -85,7 +85,7 @@ class api:
         return response
     
     def generate_auth_token(self, id : int):
-        token = jwt.encode({'user_id' : id, 'exp' : datetime.datetime.utcnow() + self.token_exp},  self.key)
+        token = jwt.encode({'user_id' : id},  self.key)
 
         return token
     
@@ -98,6 +98,8 @@ class api:
         except Exception as e:
             print(e)
             return False, {}
+        
+    
             
     def get_recommended_posts(self, id : int) -> dict:
         with self.connection.cursor() as cursor:

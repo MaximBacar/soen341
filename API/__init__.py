@@ -58,7 +58,7 @@ def token_required(f):
         response = api_interface.decode_auth_token(token)
 
         if response[0] == False:
-            return make_response("Invalid token", 403)
+            return make_response({"validity" : False}, 403)
         
         id = response[1]["user_id"]
         
@@ -100,18 +100,6 @@ def dashboard(id):
         return make_response("Invalid user id", 400)
     return api_interface.dashboard(id)
 
-
-
-
-
-@app.route("/api/testauth")
-def testauth():
-    auth = request.authorization
-
-    if auth and auth.password == 'password':
-        token = jwt.encode({'user' : auth.username, 'exp' : datetime.datetime.utcnow() + datetime.timedelta(minutes=30)}, app.config["SECRET_KEY"])
-        return {'token':token}
-    return make_response("Couldn't authentificate", 401, {'WWW-Authenticate' : 'Basic realm="Login Required"'})
 
 app.run(debug=True)
 

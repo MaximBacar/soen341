@@ -23,10 +23,6 @@ function Dashboard() {
   //  List of jobs
 
   const jwt_token = Cookies.get("auth_token");
-  
-  if (jwt_token == undefined){
-    window.location.replace("/");
-  }
 
   const [info, setInfo] = useState({});
   const [jobs, setJobs] = useState([]);
