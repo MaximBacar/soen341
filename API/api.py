@@ -58,7 +58,12 @@ class api:
             user = cursor.fetchall()
             print(user)
             return {"id" : user[0][0], "first_name" : user[0][1], "last_name" : user[0][2], "email" : user[0][3], "location" : user[0][4], "pfp" : user[0][5], "banner" : user[0][6], "about" : user[0][7]}
-            
+
+    def register_user(self, email, first_name, last_name, password, phone):
+        hashed_password = hashlib.sha256(password.encode()).hexdigest()
+        sql = f'INSERT INTO `users` VALUES (0, "{first_name}", "{last_name}", "{email}",  "{hashed_password}", NULL, NULL, NULL, "" )'
+        with self.connection.cursor() as cursor:
+            cursor.execute(sql)
         
     def set_about(self, id, text):
          with self.connection.cursor() as cursor:

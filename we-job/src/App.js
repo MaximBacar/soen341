@@ -1,5 +1,6 @@
 import Dashboard from "./pages/dashboard";
 import Login from "./pages/login";
+import Register from "./pages/register";
 import React, { createContext, useState, useEffect } from 'react';
 import "./App.css";
 import FirstPage from "./pages/firstPage";
@@ -34,12 +35,21 @@ function App() {
     return auth ? <Component /> : <Navigate to="/login" />
   }
 
+  const AnonymousOnly = ({Component}) => {
+    const auth = isAuthenticated(); //your logic
+
+    return !auth ? <Component /> : <Navigate to="/dashboard" />
+  }
+
+
+
   return (
     
       <Routes>
-        <Route path="/" element={<FirstPage/>} />
+        <Route path="/" element={<AnonymousOnly Component={FirstPage} />} />
         <Route path="/dashboard" element={<Private Component={Dashboard} />} />
-        <Route path="/Login" element={<Login/>} />
+        <Route path="/Login" element={<AnonymousOnly Component={Login} />} />
+        <Route path="/Register" element={<AnonymousOnly Component={Register} />} />
         <Route path="/feed" element={<Private Component={Feed} />}/>
       </Routes>
 

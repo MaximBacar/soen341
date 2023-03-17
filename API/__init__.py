@@ -80,6 +80,19 @@ def auth():
     
     return "invalid"
 
+@app.route("/api/register", methods=['GET', 'POST'])
+def register():
+
+    if request.method == "POST":
+        data        = request.get_json()
+        email       = data["email"]
+        first_name  = data["first_name"]
+        last_name   = data["last_name"]
+        password    = data["password"]
+        phone       = data["phone"]
+
+        
+
 
 
 @app.route("/api/updateAbout", methods=['POST'])

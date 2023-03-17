@@ -41,11 +41,11 @@
     align-content: center;
     align-items: center;
 }
-img {
+/* img {
     display: flex;
     width: 70%;
     height: 70%; 
-}
+} */
 .login_box{
     display: flex; 
     align-items: center;
@@ -94,7 +94,7 @@ img {
 .space-between2{
     width:2rem; 
 }
-input{
+/* input{
     border: solid #d3d3d3;
     border-radius: 10px; 
     height: 50px;
@@ -104,7 +104,7 @@ input{
   
     background: none;
     outline: none;
-}
+} */
 
 .text_field span::before{
     content: '';
