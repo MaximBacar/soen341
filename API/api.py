@@ -93,8 +93,10 @@ class api:
         
         try:
             data = jwt.decode(token, self.key, algorithms=["HS256"])
+            print(data)
             return True, {"user_id" : data["user_id"]}
-        except:
+        except Exception as e:
+            print(e)
             return False, {}
             
     def get_recommended_posts(self, id : int) -> dict:

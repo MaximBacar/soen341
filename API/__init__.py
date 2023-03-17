@@ -9,6 +9,7 @@ import mysql.connector
 import jwt
 import datetime
 from getpass import getpass
+import json
 
 
 
@@ -53,7 +54,7 @@ def token_required(f):
     @wraps(f)
     def decorated(*args, **kwargs):
         token = request.args.get('token')
-
+        print(token)
         response = api_interface.decode_auth_token(token)
 
         if response[0] == False:
@@ -68,8 +69,9 @@ def token_required(f):
 def auth():
 
     if request.method == "POST":
-        email = request.form["email"]
-        password = request.form["password"]
+        data = request.get_json()
+        email = data["email"]
+        password = data["password"]
 
         acc_data = api_interface.auth(email=email, clear_password=password)
         if acc_data[0] == True:

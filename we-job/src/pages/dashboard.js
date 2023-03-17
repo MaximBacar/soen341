@@ -1,4 +1,5 @@
 import Navbar from "../Components/navbar_connected";
+import React, { useContext } from 'react';
 //import Footer from "../Components/footer";
 import About from "../Components/profile/profile_about";
 import Info from "../Components/profile/profile_info";
@@ -13,20 +14,30 @@ import "./styles/dashboard.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { useState } from "react";
 import { useEffect } from "react";
+import Cookies from "js-cookie";
+
 
 
 function Dashboard() {
 
   //  List of jobs
+
+  const jwt_token = Cookies.get("auth_token");
+  
+  if (jwt_token == undefined){
+    window.location.replace("/");
+  }
+
   const [info, setInfo] = useState({});
   const [jobs, setJobs] = useState([]);
   const [skills, setSkills] = useState([]);
-  const [userID, setUserID] = useState(1);
+  const [userID, setUserID] = useState(jwt_token);
+
+  
   
   
   useEffect(() => {
-    console.log("http://localhost:3000/api/dashboard?user_id=".concat(userID.toString()));
-    fetch("http://localhost:3000/api/dashboard?user_id=".concat(userID.toString()))
+    fetch("http://localhost:3000/api/dashboard?token=".concat(userID.toString()))
     .then(response => response.json()).then(json => {
       if (json.length != 0){
 
