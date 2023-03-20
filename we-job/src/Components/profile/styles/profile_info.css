@@ -19,6 +19,10 @@
   overflow: hidden;
 }
 
+#background_image:hover{
+  cursor: pointer;
+}
+
 #background_image img{
   width: 100%;
   height: auto;
@@ -91,6 +95,7 @@
 
 #contact:hover{
   box-shadow: 0 0 3px rgba(0,0,0,0.5);
+  cursor: pointer;
 }
 
 #personal_info_text{
@@ -118,9 +123,15 @@
 #arrow{
   height: 30px;
   width: 30px;
+  transition: transform 0.5s ease-in-out;
 }
 
 #arrow img{
   width: 100%;
   height: auto;
+}
+
+.rotate {
+  transform: rotate(90deg);
+  transition: transform 0.5s ease-in-out;
 }

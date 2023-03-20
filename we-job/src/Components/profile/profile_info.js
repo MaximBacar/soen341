@@ -16,6 +16,23 @@ function Profile_info(props) {
   }
 
 
+  const [editMode,setEditMode] = useState(false);
+
+
+  function enableEdit(){
+    setEditMode(!editMode);
+
+    const element = document.getElementById("arrow");
+
+    if(editMode == true){
+      element.classList.add("rotate");
+    }
+    else{
+      element.classList.remove("rotate");
+    }
+  }
+
+
 
 
   const profilePicMenu = () => {
@@ -32,6 +49,7 @@ function Profile_info(props) {
 
       <span id="circle" onClick={profilePicMenu}>
         <img src="https://img.icons8.com/ios/100/null/compact-camera.png"/>
+        <input type="file" hidden/>
       </span>
 
       <div id="info_text">
@@ -39,7 +57,7 @@ function Profile_info(props) {
           <h1>{info.first_name} {info.last_name}</h1>
           <p>Full time Computer Engineering student at Concordia University</p>
         </div>
-        <div id="contact">
+        <div onClick={enableEdit} id="contact">
           <div id="personal_info_text">
               <div id="info_element">
               <img src="https://img.icons8.com/external-kmg-design-glyph-kmg-design/64/null/external-email-business-management-kmg-design-glyph-kmg-design.png"/>
@@ -58,7 +76,7 @@ function Profile_info(props) {
           </div>
 
           <div id="arrow">
-          <img src="https://img.icons8.com/external-inkubators-detailed-outline-inkubators/100/null/external-right-arrows-inkubators-detailed-outline-inkubators.png"/>
+            <img src="https://img.icons8.com/external-inkubators-detailed-outline-inkubators/100/null/external-right-arrows-inkubators-detailed-outline-inkubators.png"/>
           </div>
         </div>
       </div>

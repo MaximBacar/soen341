@@ -3,8 +3,10 @@ import hashlib
 import re
 import jwt
 import datetime
-
-
+import PyPDF2
+import textract
+import spacy
+import fitz
 
 
 class api:
@@ -104,6 +106,68 @@ class api:
             print(e)
             return False, {}
         
+
+    def extract_info_cv():
+        nlp = spacy.load('fr_core_news_sm')
+        cv_file = 'C:/Users/maxim/OneDrive/Documents/Maxim Bacar/School/University/Winter 2023/scrum/197team-soen341project2023/API/cv.pdf'
+        doc = fitz.open(cv_file)
+
+
+
+        text = ""
+        for page in doc:
+            p = page.get_text()
+            text += p
+
+
+        print(text)
+
+        doc = nlp(text)
+        print(doc.sents)
+        sections = {}
+        for ent in doc.ents:
+            if ent.label_ == 'SECTION':
+                sections[ent.text.strip().lower()] = ent.end_char
+
+        print(sections)
+
+
+
+    def extract_cv():
+        
+
+        # Open the PDF file
+        pdf_file = open(r'C:/Users/maxim/OneDrive/Documents/Maxim Bacar/School/University/Winter 2023/scrum/197team-soen341project2023/API/cv.pdf', 'rb')
+        pdf_reader = PyPDF2.PdfReader(pdf_file)
+
+        # Extract text from the PDF
+        text = ''
+        for i in range(len(pdf_reader.pages)):
+            page = pdf_reader.pages[i]
+            text += page.extract_text()
+
+        print(text)
+        # Use regular expressions to identify sections
+        education_section = re.search(r'Expériences(.+?)Formation', text, re.DOTALL)
+        experience_section = re.search(r'Formation(.+?)Compét ences', text, re.DOTALL)
+        skills_section = re.search(r'Compét ences(.+?)\Z', text, re.DOTALL)
+
+        # Use regular expressions to extract information from each section
+        education_info = re.findall(r'\n(.+?)\n(.+?)\n(.+?)\n', education_section.group(1))
+        experience_info = re.findall(r'\n(.+?)\n(.+?)\n(.+?)\n', experience_section.group(1))
+        skills_info = re.findall(r'\n(.+?)\n', skills_section.group(1))
+
+        # Create a dictionary with the extracted information
+        cv_data = {
+            'education': education_info,
+            'experience': experience_info,
+            'skills': skills_info
+        }
+
+        # Print the dictionary
+        print(cv_data)
+
+        
     
             
     def get_recommended_posts(self, id : int) -> dict:
@@ -167,6 +231,11 @@ class api:
                     #return True, api.user_db_to_account(results[0])
                 else:
                     return False, None
+
+
+
+
+        
                 
 
 

@@ -29,6 +29,24 @@ function Feed() {
         <div className="posting_body">
           <div className="postings">
 
+            <div id="post_main">
+
+              <div id="post"></div>
+              <div id="post"></div>
+              <div id="post"></div>
+              <div id="post"></div>
+              <div id="post"></div>
+              <div id="post"></div>
+              <div id="post"></div>
+              <div id="post"></div>
+              <div id="post"></div>
+              <div id="post"></div>
+              <div id="post"></div>
+              <div id="post"></div>
+
+            </div>
+            <div id="post_more"></div>
+
           </div>
             
         </div>
