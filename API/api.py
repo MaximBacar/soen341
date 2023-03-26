@@ -167,6 +167,23 @@ class api:
         # Print the dictionary
         print(cv_data)
 
+
+    def list_postings(self, id):
+        pass
+
+    def search_bar(self, entry):
+        with self.connection.cursor() as cursor:
+            cursor.execute(f"SELECT * FROM `users` WHERE `first_name` LIKE '%{entry}%' OR `last_name` LIKE '%{entry}%' ;")
+            users = cursor.fetchall()
+            cursor.execute(f"SELECT * FROM `employes` WHERE `name` LIKE '%{entry}%';")
+            companies = cursor.fetchall()
+            cursor.execute(f"SELECT * FROM `postings` WHERE `name` LIKE '%{entry}%';")
+            postings = cursor.fetchall()
+
+
+
+
+        return {}
         
     
             

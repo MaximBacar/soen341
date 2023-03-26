@@ -114,6 +114,26 @@ def dashboard(id):
     return api_interface.dashboard(id)
 
 
+@app.route("/api/feed/")
+@token_required
+def feed(id):
+    if id == None:
+        return make_response("Invalid user id", 400)
+    pass
+
+
+@app.route("/api/profile/")
+def profile():
+    pass
+
+@app.route("/api/company")
+def company():
+    pass
+
+@app.route("/api/company_dashboard")
+def company_dashboard():
+    pass
+
 app.run(debug=True)
 
 

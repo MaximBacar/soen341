@@ -113,7 +113,7 @@
 }
 
 #post_more{
-    width: 25%;
+    width: 45%;
     height: 100%;
     background-color: orange;
     transition: 1s;
@@ -125,16 +125,35 @@
 }
 
 #post{
+    padding: 20px;
     min-height: 500px !important;
+
     width: 98%;
-    border: 2px solid black;
+    border: 1px solid black;
     margin:10px;
     border-radius: 25px;
     overflow-y: auto;
     background-color: white;
-
+    text-align: left;
+    display: flex;
+    flex-direction: column;
     
-  
+
+}
+
+#post #short_description{
+    width: 500px;
+    text-align: justify;
+
+}
+
+#post #date{
+    bottom: 0;
+    
+}
+
+#post h3{
+    font-weight: normal;
 }
 
 ::-webkit-scrollbar {
