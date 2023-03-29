@@ -1,32 +1,28 @@
+import React from "react";
+import logo from "../Components/photo/wejob-low-resolution-logo-color-on-transparent-background.png";
+import "./styles/homepage.css";
 import Navbar from "../Components/navbar";
-import Footer from "../Components/footer";
-import "./homepage.css";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import { useState } from "react";
-import JobList from "../Components/jobList";
-import ProfileMini from "../Components/profileMini";
+import girl from "../Components/photo/undraw_Exams_re_4ios (1).png";
 
-function Homepage() {
-  const [jobs, setJobs] = useState([
-    { title: "job1", body: "HELLO", author: "asmae", id: 1 },
-    { title: "job2", body: "HELLO2", author: "asmae", id: 2 },
-    { title: "job3", body: "HELLO3", author: "asmae", id: 3 },
-    { title: "job4", body: "HELLO", author: "asmae", id: 4 },
-    { title: "job4", body: "HELLO", author: "asmae", id: 5 },
-    { title: "job4", body: "HELLO", author: "asmae", id: 6 },
-    { title: "job4", body: "HELLO", author: "asmae", id: 7 },
-    { title: "job4", body: "HELLO", author: "asmae", id: 8 },
-    { title: "job4", body: "HELLO", author: "asmae", id: 9 },
-    { title: "job4", body: "HELLO", author: "asmae", id: 10 },
-  ]);
-
+function homepage() {
   return (
-    <div id="home">
-      <Navbar />
-      <ProfileMini />
-      <JobList jobs={jobs} />
-      <Footer />
+    <div className="homepage">
+
+        <div>
+            <Navbar/>
+        </div>
+
+        <div className="homepage_body">
+            <div id="right">
+                <h1>Connect with colleagues and potential employers to achieve the dream career you deserve.</h1>
+            </div>
+            <div id="left">
+                <img src={girl}/>
+            </div>
+        </div>
+        
+      
     </div>
   );
 }
-export default Homepage;
+export default homepage;

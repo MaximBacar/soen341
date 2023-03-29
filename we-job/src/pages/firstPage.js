@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../Components/photo/wejob-low-resolution-logo-color-on-transparent-background.png";
-import "./firstPage.css";
+import "./styles/firstPage.css";
 import Footer from "../Components/footer";
 import girl from "../Components/photo/undraw_Exams_re_4ios (1).png";
 
@@ -11,10 +11,10 @@ function firstPage() {
         <img src={logo} />
       </div>
       <div id="firstPageBtn">
-        <a class="firstPageLink" href="/">
+        <a className="firstPageLink" href="/">
           Log in
         </a>
-        <a class="firstPageLink" href="/">
+        <a className="firstPageLink" href="/">
           Sign Up
         </a>
       </div>
@@ -25,7 +25,7 @@ function firstPage() {
         Connect with colleagues and potential employers to achieve the dream
         career you deserve{" "}
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

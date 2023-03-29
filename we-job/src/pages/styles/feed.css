@@ -1,0 +1,175 @@
+.feed{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    background-color: #f2f2f2;
+    
+    
+}
+
+
+.search_bar{
+    width: 100%;
+    height: 80px;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background-color: white;
+
+    /* box-shadow: 0 2px 2px rgba(0,0,0,0.2); */
+    z-index: 99;
+
+}
+
+#search_btn{
+    border-radius: 25px;
+    border: none;
+    background:none;
+    height: 40px;
+    width: 40px;
+    transition: 1.7s ease-out;
+    /* background-color: white; */
+}
+
+#search_btn:hover{
+    height: 50px;
+    width: 50px;
+    transition: 0.8s ease-in;
+    rotate: -90deg;
+}
+
+#search_btn svg{
+    width: 70%;
+    height: 70%;
+    filter:invert(100%);
+}
+
+#search_zone{
+    display: flex;
+    width: 60%;
+    height: 80%;
+    background-color: black;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    
+}
+
+
+#search{
+    width: 50%;
+    height: 70%;
+    padding: 10px;
+    border-radius: 15px;
+    border: none;
+    transition: 0.5s;
+}
+#search::placeholder{
+    font-style: italic;
+}
+
+#search:focus{
+    width: 52%;
+    transition: 0.5s;
+}
+
+.posting_body{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background-color: #f2f2f2;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+
+.postings{
+    width: 70%;
+    height: calc(100vh - 160px); 
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: row;
+
+}
+
+#post_main{
+    flex: 1 0 auto;
+    height: 100%;
+    /* background-color: white; */
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    
+
+}
+
+#post_more{
+    width: 45%;
+    height: 100%;
+    background-color: orange;
+    transition: 1s;
+}
+
+#post_more:hover{
+    transition: 1s;
+    width: 55%;
+}
+
+#post{
+    padding: 20px;
+    min-height: 500px !important;
+
+    width: 98%;
+    border: 1px solid black;
+    margin:10px;
+    border-radius: 25px;
+    overflow-y: auto;
+    background-color: white;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    
+
+}
+
+#post #short_description{
+    width: 500px;
+    text-align: justify;
+
+}
+
+#post #date{
+    bottom: 0;
+    
+}
+
+#post h3{
+    font-weight: normal;
+}
+
+::-webkit-scrollbar {
+    width: 20px;
+
+}
+::-webkit-scrollbar-track
+{
+    /* background-color: transparent; */
+    display: none;
+
+}
+::-webkit-scrollbar-thumb {
+    background:black;
+    border-radius: 50px;
+    border: 5px solid transparent;
+    background-clip: content-box;
+
+  }
