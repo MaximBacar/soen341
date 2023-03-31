@@ -54,7 +54,6 @@ def token_required(f):
     @wraps(f)
     def decorated(*args, **kwargs):
         token = request.args.get('token')
-        print(token)
         response = api_interface.decode_auth_token(token)
 
         if response[0] == False:
@@ -64,6 +63,21 @@ def token_required(f):
         
         return f(id, *args, **kwargs)
     return decorated
+
+def employer_token_required(f):
+    @wraps(f)
+    def decorated(*args, **kwargs):
+        token = request.args.get('token')
+        response = api_interface.decode_auth_token(token)
+
+        if response[0] == False:
+            return make_response({"validity" : False}, 403)
+        
+        id = response[1]["employer_id"]
+
+        return f(id, *args, **kwargs)
+    return decorated
+
 
 @app.route("/api/auth", methods=['GET', 'POST'])
 def auth():
