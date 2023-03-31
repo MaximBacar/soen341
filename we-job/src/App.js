@@ -6,6 +6,9 @@ import "./App.css";
 import Homepage from "./pages/homepage";
 import Feed from "./pages/feed"
 import Cookies from "js-cookie";
+import C_Dashboard from "./pages/company_dashboard";
+
+import C_Login from "./pages/company_login";
 
 
 
@@ -51,6 +54,10 @@ function App() {
         <Route path="/Login" element={<AnonymousOnly Component={Login} />} />
         <Route path="/Register" element={<AnonymousOnly Component={Register} />} />
         <Route path="/feed" element={<Private Component={Feed} />}/>
+        <Route path="/c_dash" element={<C_Dashboard/>}/>
+
+        {/* <Route path="/c_login" element={<C_Login/>}/> */}
+
       </Routes>
 
   
