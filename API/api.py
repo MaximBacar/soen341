@@ -91,6 +91,38 @@ class api:
         response["skills"] = self.get_skills(id)
         return response
     
+    def get_employer(self, employer_id):
+        with self.connection.cursor() as cursor:
+            cursor.execute(f"SELECT `id`, `name`, `email`, `description`, `logo` FROM `employers` WHERE `id` = {employer_id};")
+            user = cursor.fetchall()
+            print(user)
+            return {"id" : user[0][0], "name" : user[0][1], "email" : user[0][2], "description" : user[0][3], "logo" : user[0][4]}
+        
+    def get_employer_postings(self, employer_id):
+
+        postings = {}
+
+        with self.connection.cursor() as cursor:
+            cursor.execute(f"SELECT * FROM `postings` WHERE `employer_id` = {employer_id};")
+            posting_db = cursor.fetchall()
+
+            for i in range(len(posting_db)):
+                postings[i] = {"id":posting_db[i][0], "name":posting_db[i][1], "post_time" : posting_db[i][2], "description": posting_db[i][3], "salaray":posting_db[i][5]}
+
+
+        return postings
+
+
+
+    
+    def employer_dashboard(self, employer_id):
+        response = {}
+        response["info"] = self.get_employer(employer_id)
+        response["postings"] = self.get_employer_postings(employer_id)
+        response["total_postings"] = len(self.get_employer_postings(employer_id))
+        return response
+
+    
     def generate_auth_token(self, id : int):
         token = jwt.encode({'user_id' : id},  self.key)
 
@@ -262,4 +294,6 @@ class api:
 
         self.token_exp = datetime.timedelta(minutes=30)
         self.key = "SOEN341"
+
+
 

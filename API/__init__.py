@@ -132,7 +132,7 @@ def company():
 
 @app.route("/api/company_dashboard")
 def company_dashboard():
-    pass
+    return api_interface.employer_dashboard(1)
 
 app.run(debug=True)
 
