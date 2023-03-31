@@ -56,7 +56,7 @@ function App() {
         <Route path="/feed" element={<Private Component={Feed} />}/>
         <Route path="/c_dash" element={<C_Dashboard/>}/>
 
-        {/* <Route path="/c_login" element={<C_Login/>}/> */}
+        <Route path="/c_login" element={<C_Login/>}/>
 
       </Routes>
 
