@@ -42,7 +42,7 @@ function Dashboard() {
         var postings = []
         for (var i = 0; i < 5; i++){
         
-          const temp_dict = {title: json["recommended_posts"][i].name, body : json["recommended_posts"][i].description, author : "EMPLOYER", id : json["recommended_posts"][i].posting_id, date : json["recommended_posts"][i].date};
+          const temp_dict = {title: json["recommended_posts"][i].name, body : json["recommended_posts"][i].description, author : json["recommended_posts"][i].employer, id : json["recommended_posts"][i].posting_id, date : json["recommended_posts"][i].date};
           postings.push(temp_dict);
           
         }

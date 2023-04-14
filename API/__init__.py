@@ -35,7 +35,7 @@ try:
     )
 
 except Error as e:
-    print()
+    print(e)
 
 app = Flask(__name__)
 
@@ -47,11 +47,15 @@ app.config['SECRET_KEY'] = api_interface.key
 
 @app.route('/')
 def home():
-    return "API"
-
+    return "<h1>WeJob REST API</h1><br><ul><li><a href="">Documentation</a></li></ul>"
 
 def token_required(f):
+    '''
+    Function that implements token handeling. wrapping this function to another will force users to be
+    authentified before accessing the page. 
+    '''
     @wraps(f)
+    
     def decorated(*args, **kwargs):
         token = request.args.get('token')
         response = api_interface.decode_auth_token(token)

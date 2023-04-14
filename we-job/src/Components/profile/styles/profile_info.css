@@ -70,8 +70,6 @@
   align-items: start;
   flex-direction: row;
   width: 100%;
-  
-
 }
 
 #info_text h1{
@@ -134,4 +132,22 @@
 .rotate {
   transform: rotate(90deg);
   transition: transform 0.5s ease-in-out;
+}
+
+
+#cv_upload_btn{
+  margin-top: 10px;
+  width: 250px;
+  height: 40px;
+  border-radius: 25px;
+  background-color: black;
+  color: white;
+  font-size: 12px;
+  transition: 0.5s;
+}
+
+#cv_upload_btn:hover{
+  background-color: white;
+  color: black;
+  transition: 0.5s;
 }

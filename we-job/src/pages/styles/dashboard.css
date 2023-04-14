@@ -18,7 +18,6 @@
 
 .profile{
   width: 50%;
-  
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,8 +25,12 @@
 }
 .recommended{
   width: 20%;
-  
   margin-left: 20px;
+  margin-top: 20px;
+}
+
+.recommended h2{
+  font-weight: normal;
 }
 
 header{
@@ -36,6 +39,6 @@ header{
   width: 100%;
 }
 footer{
-  background-color: aqua;
+  background-color: #fbfbfb;
   height: 80px;
 }

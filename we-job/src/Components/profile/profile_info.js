@@ -35,9 +35,21 @@ function Profile_info(props) {
 
 
 
-  const profilePicMenu = () => {
 
-  }
+
+  // const profile_img_div = document.getElementById("circle");
+  // const profile_img_input = document.getElementById("profile_img_input");
+
+  // function changePFP (){
+  //   profile_img_input.click();
+  // }
+
+  // profile_img_input.addEventListener("change", function() {
+  //   const file = profile_img_input.files[0];
+  //   console.log(file);
+  //   // Do something with the selected image file
+  // });
+
 
   return (
     <div className="info">
@@ -45,11 +57,13 @@ function Profile_info(props) {
 
       <div id="background_image">
         <img src={require("../../user-data/banner-pictures/".concat(banner_url))}/>
+        <input type="file" accept="image/*" id="background_img_input" hidden></input>
       </div>
 
-      <span id="circle" onClick={profilePicMenu}>
+      <span id="circle" >
         <img src="https://img.icons8.com/ios/100/null/compact-camera.png"/>
-        <input type="file" hidden/>
+        <input type="file" accept="image/*" id="profile_img_input" hidden></input>
+
       </span>
 
       <div id="info_text">

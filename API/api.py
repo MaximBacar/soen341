@@ -10,8 +10,9 @@ import fitz
 
 
 class api:
-    
-
+    '''
+    REST API of we Job
+    '''
     def check_mail(email : str):
         '''
         Check if email format is valid
@@ -21,26 +22,35 @@ class api:
             return True
         else:
             return False
-        
-    def user_db_to_account(data : tuple) -> int:
-        account = data[0]
-        return account
 
     def auth(self, email : str, clear_password : str) -> bool|int:
+        '''
+        Handle authentifications
+        '''
+
+        #   Passwords are stored hashed to ensure security
+        #   hash clear password
         hashed_password = hashlib.sha256(clear_password.encode()).hexdigest()
 
+        #   Check if email is in valid format (xxx@xxx.XX)
         if api.check_mail(email) == False:
             return False, None
        
+        #   Search through the database
         with self.connection.cursor() as cursor:
+                #   Get results where email and password match
                 cursor.execute(f"SELECT * FROM `users` WHERE `email` = '{email}' AND `password` = '{hashed_password}';")
                 results = cursor.fetchall()
 
+                #   If there's a result, return a true response with a jwt connection token
                 if len(results) > 0:
                     return True, self.generate_auth_token(results[0][0])
+                
+                #   If not, return a false reponse
                 else:
                     return False, None
-                
+    
+
     def modify_last_name(self, id, name):
         with self.connection.cursor() as cursor:
             cursor.execute(f"UPDATE `users` SET `last_name` = '{name}' WHERE `id`={id}")
@@ -79,12 +89,13 @@ class api:
             for i in range (len(user_skills)):
                     skills["skills"][i] = {"skill_id" : user_skills[i][0], "user_id" : user_skills[i][1], "skill_name" : user_skills[i][2]}
 
-            
-
             return skills
         
 
     def dashboard(self, id : int):
+        '''
+        Return all info for the dashboard
+        '''
         response = {}
         response["info"] = self.get_user(id)
         response["recommended_posts"] = self.get_recommended_posts(id)
@@ -124,12 +135,17 @@ class api:
 
     
     def generate_auth_token(self, id : int):
+        '''
+        Generate authorization token for session
+        '''
         token = jwt.encode({'user_id' : id},  self.key)
 
         return token
     
     def decode_auth_token(self, token):
-        
+        '''
+        Decode authorization token to retrieve user id
+        '''
         try:
             data = jwt.decode(token, self.key, algorithms=["HS256"])
             print(data)
@@ -213,17 +229,21 @@ class api:
             postings = cursor.fetchall()
 
 
-
-
         return {}
         
     
             
     def get_recommended_posts(self, id : int) -> dict:
+        '''
+        Return 5 recommended posts displayed on the dashboard of the user
+        '''
         with self.connection.cursor() as cursor:
+                
+                #   Get all the skills of the user
                 cursor.execute(f"SELECT * FROM `user_skills` WHERE `user_id` = {id};")
                 user_skills = cursor.fetchall()
 
+                #   Find all the job postings requiring the skills that the user have
                 if len(user_skills) > 0:
                     sql_request = "SELECT * FROM `posting_skills` WHERE `skill` LIKE "
                     for i in range(len(user_skills)):
@@ -232,8 +252,6 @@ class api:
                         else:
                             sql_request = sql_request + f"'{user_skills[i][2]}'"
                     sql_request = sql_request +";"
-
-
                     
                     cursor.execute(sql_request)
                     posting_skills = cursor.fetchall()
@@ -244,6 +262,7 @@ class api:
                         if skill[1] not in posting_id:
                             posting_id.append(skill[1])
 
+                    #   Get the 5 most recent postings from the database
                     sql_request = "SELECT * FROM `postings` WHERE `id` IN ("
                     for i in range(len(posting_id)):
                         sql_request = sql_request + f"{posting_id[i]}"
@@ -252,47 +271,50 @@ class api:
                             sql_request = sql_request+","
                     sql_request = sql_request +") ORDER BY `post_time` DESC LIMIT 5;"
 
-                    
-
-                    
 
                     cursor.execute(sql_request)
+
+                    #   Store the recommended postings
                     postings = cursor.fetchall()
 
                     recommended_posts = {}
 
                     for i in range(len(postings)):
+
+                        employer_name = self.get_employer(postings[i][4])["name"]
+                        post_when_ago = datetime.datetime.now() - postings[i][2]
+                        when_str = ""
+                        if (post_when_ago.days > 0):
+
+                            if (post_when_ago.days > 31):
+                                when_str = f"{postings[i][2].date()}"
+                            else:
+                                when_str = f"{post_when_ago.days} days ago"
+
+                            
+                        else:
+                            when_str = "Today"
+                        
+                        
                         recommended_posts[i] = {"posting_id" : postings[i][0],
                                                 "name" : postings[i][1],
-                                                "date" : postings[i][2],
+                                                "date" : when_str,
                                                 "description" : postings[i][3],
-                                                "employer_id" : postings[i][4]
+                                                "employer" : employer_name
                                                 }
                         
 
                     return recommended_posts
 
-                    
-
-                    
-                    
-
-                    #return True, api.user_db_to_account(results[0])
                 else:
                     return False, None
 
-
-
-
-        
-                
-
-
     def __init__(self, mysql_connection) -> None:
+
+        # Database connection
         self.connection = mysql_connection
 
-
-        self.token_exp = datetime.timedelta(minutes=30)
+        #   Project secret key
         self.key = "SOEN341"
 
 
