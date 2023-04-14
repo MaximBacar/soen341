@@ -9,6 +9,7 @@ import Cookies from "js-cookie";
 import C_Dashboard from "./pages/company_dashboard";
 
 import C_Login from "./pages/company_login";
+import Upload from "./pages/upload";
 
 
 
@@ -51,6 +52,7 @@ function App() {
       <Routes>
         <Route path="/" element={<AnonymousOnly Component={Homepage} />} />
         <Route path="/dashboard" element={<Private Component={Dashboard} />} />
+        <Route path="/dashboard/upload" element={<Upload/>}/>
         <Route path="/Login" element={<AnonymousOnly Component={Login} />} />
         <Route path="/Register" element={<AnonymousOnly Component={Register} />} />
         <Route path="/feed" element={<Private Component={Feed} />}/>

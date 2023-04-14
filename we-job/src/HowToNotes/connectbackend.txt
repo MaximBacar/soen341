@@ -1,6 +1,0 @@
-to do
-
-1) configure the .json() file to contain a proxy
-2) use useState and useEffect to connect to backend
-    useState to create data and setdata variables 
-    useEffect to have fetch() inside it to get data from backend
