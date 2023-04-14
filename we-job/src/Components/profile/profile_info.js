@@ -56,6 +56,7 @@ function Profile_info(props) {
         <div id="personal_info">
           <h1>{info.first_name} {info.last_name}</h1>
           <p>Full time Computer Engineering student at Concordia University</p>
+          <button id="cv_upload_btn">Upload CV</button>
         </div>
         <div onClick={enableEdit} id="contact">
           <div id="personal_info_text">
